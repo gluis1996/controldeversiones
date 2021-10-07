@@ -1,1 +1,2 @@
-admin|admin
+admin|123
+luis|123

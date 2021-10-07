@@ -1,20 +1,22 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 public class VISTA extends javax.swing.JFrame {
+
     USUARIOS usu;
-    USUARIOS arreglousu [];
+    USUARIOS arreglousu[];
     int pos;
+
     public VISTA() {
         initComponents();
         arreglousu = new USUARIOS[100];
         pos = 0;
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -96,35 +98,33 @@ public class VISTA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        leerdatos();
-        for (int i = 0; i < pos; i++) {
-               if(txtusername.getText().equals(arreglousu[i].user) && txtpassword.getText().equals(arreglousu[i].password)){
-                   JOptionPane.showMessageDialog(null, "conexionexitosa");
-               }else JOptionPane.showMessageDialog(null, "error en la bd");
+        //https://es.stackoverflow.com/questions/248516/login-por-medio-de-txt
+        //http://ocw.udl.cat/enginyeria-i-arquitectura/programacio-2/continguts-1/4-manejo-bai81sico-de-archivos-en-java.pdf
+        String linea;
+        boolean con = false;
+        try {
+            FileReader fr = new FileReader("usuarios.txt");
+            BufferedReader br = new BufferedReader(fr);
+            String usua = txtusername.getText();
+            String pass = txtpassword.getText();
+            while ((linea = br.readLine()) != null) {
+                String palabra [] = linea.split("|");
+                if (palabra[0].equals(usua)&& palabra[1].equals(pass)){
+                    JOptionPane.showMessageDialog(null, "sesion iniciada");
+                    con = true;
+                    dispose();
+                }
+            }
+            if (!con){
+                JOptionPane.showMessageDialog(null, "eeror");
+        }   
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "error en la bd");
         }
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
-        void leerdatos(){
-            String linea;
-            try {
-                FileReader fr = new FileReader("usuarios.txt");
-                BufferedReader br = new BufferedReader(fr);
-                while((linea=br.readLine())!= null){
-                    StringTokenizer st = new StringTokenizer(linea, "|");
-                    String usuario = st.nextToken();
-                    String contra = st.nextToken();
-                    usu = new USUARIOS(usuario, contra);
-                    arreglousu[pos]= usu;
-                    pos++;
-                                  
-                }
-            } catch (Exception e) { JOptionPane.showMessageDialog(null, "erros al leer los datos");
-            }
- 
-           
-        
-        }
+   
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
