@@ -100,19 +100,17 @@ public class VISTA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //https://es.stackoverflow.com/questions/248516/login-por-medio-de-txt
         //http://ocw.udl.cat/enginyeria-i-arquitectura/programacio-2/continguts-1/4-manejo-bai81sico-de-archivos-en-java.pdf
+        
         String linea;
         boolean con = false;
-        try {
-            FileReader fr = new FileReader("usuarios.txt");
-            BufferedReader br = new BufferedReader(fr);
             String usua = txtusername.getText();
             String pass = txtpassword.getText();
+        try (BufferedReader br = new BufferedReader( new FileReader("usuarios.txt"));) {
             while ((linea = br.readLine()) != null) {
-                String palabra [] = linea.split("|");
+                String palabra [] = linea.split(" ");
                 if (palabra[0].equals(usua)&& palabra[1].equals(pass)){
                     JOptionPane.showMessageDialog(null, "sesion iniciada");
                     con = true;
-                    dispose();
                 }
             }
             if (!con){
