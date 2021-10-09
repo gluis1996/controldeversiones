@@ -10,11 +10,12 @@ public class VISTA extends javax.swing.JFrame {
     USUARIOS usu;
     USUARIOS arreglousu[];
     int pos;
-
+    
     public VISTA() {
         initComponents();
         arreglousu = new USUARIOS[100];
         pos = 0;
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -73,7 +74,7 @@ public class VISTA extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 270, 30));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 270, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 338, 380));
 
@@ -100,21 +101,25 @@ public class VISTA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //https://es.stackoverflow.com/questions/248516/login-por-medio-de-txt
         //http://ocw.udl.cat/enginyeria-i-arquitectura/programacio-2/continguts-1/4-manejo-bai81sico-de-archivos-en-java.pdf
+         String usua = txtusername.getText();
+         String pass = txtpassword.getText();
+         DASHBOARD ds  = new DASHBOARD();
         
-        String linea;
+         String linea;
         boolean con = false;
-            String usua = txtusername.getText();
-            String pass = txtpassword.getText();
+           
         try (BufferedReader br = new BufferedReader( new FileReader("usuarios.txt"));) {
             while ((linea = br.readLine()) != null) {
                 String palabra [] = linea.split(" ");
                 if (palabra[0].equals(usua)&& palabra[1].equals(pass)){
                     JOptionPane.showMessageDialog(null, "sesion iniciada");
                     con = true;
+                    dispose();
+                    ds.setVisible(true);
                 }
             }
             if (!con){
-                JOptionPane.showMessageDialog(null, "eeror");
+                JOptionPane.showMessageDialog(null, "verifique el nombre del usuario o contraseña");
         }   
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "error en la bd");
