@@ -6,15 +6,9 @@ import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 public class VISTA extends javax.swing.JFrame {
-
-    USUARIOS usu;
-    USUARIOS arreglousu[];
-    int pos;
-    
+  
     public VISTA() {
         initComponents();
-        arreglousu = new USUARIOS[100];
-        pos = 0;
         this.setLocationRelativeTo(null);
     }
 
