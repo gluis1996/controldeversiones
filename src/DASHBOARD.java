@@ -23,30 +23,21 @@ public class DASHBOARD extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        contenedor = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        BASE = new javax.swing.JPanel();
+        BARRA_LATERAL = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        CONTENDOR = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        contenedor.setBackground(new java.awt.Color(204, 204, 255));
+        BASE.setBackground(new java.awt.Color(255, 255, 255));
+        BASE.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
-        contenedor.setLayout(contenedorLayout);
-        contenedorLayout.setHorizontalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
-        );
-        contenedorLayout.setVerticalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 505, Short.MAX_VALUE)
-        );
-
-        jPanel1.setBackground(new java.awt.Color(255, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BARRA_LATERAL.setBackground(new java.awt.Color(255, 0, 0));
+        BARRA_LATERAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("VENDER");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +45,7 @@ public class DASHBOARD extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        BARRA_LATERAL.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 90, -1));
 
         jButton2.setText("H . CLIENTES");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +53,7 @@ public class DASHBOARD extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        BARRA_LATERAL.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         jButton3.setText("STOCK P");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -70,28 +61,35 @@ public class DASHBOARD extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         jButton4.setText("DE. VENTA");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, -1));
+        BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, -1));
+
+        BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 527));
+
+        javax.swing.GroupLayout CONTENDORLayout = new javax.swing.GroupLayout(CONTENDOR);
+        CONTENDOR.setLayout(CONTENDORLayout);
+        CONTENDORLayout.setHorizontalGroup(
+            CONTENDORLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+        CONTENDORLayout.setVerticalGroup(
+            CONTENDORLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
+        );
+
+        BASE.add(CONTENDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 800, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(BASE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(BASE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -149,11 +147,12 @@ public class DASHBOARD extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel contenedor;
+    private javax.swing.JPanel BARRA_LATERAL;
+    private javax.swing.JPanel BASE;
+    private javax.swing.JPanel CONTENDOR;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,6 +17,9 @@ public class VISTA extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        BARRA_SUPERIOR = new javax.swing.JPanel();
+        CERRAR = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -30,9 +33,54 @@ public class VISTA extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BARRA_SUPERIOR.setBackground(new java.awt.Color(204, 204, 255));
+
+        CERRAR.setBackground(new java.awt.Color(204, 204, 255));
+        CERRAR.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        CERRAR.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("X");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout CERRARLayout = new javax.swing.GroupLayout(CERRAR);
+        CERRAR.setLayout(CERRARLayout);
+        CERRARLayout.setHorizontalGroup(
+            CERRARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CERRARLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        CERRARLayout.setVerticalGroup(
+            CERRARLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CERRARLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout BARRA_SUPERIORLayout = new javax.swing.GroupLayout(BARRA_SUPERIOR);
+        BARRA_SUPERIOR.setLayout(BARRA_SUPERIORLayout);
+        BARRA_SUPERIORLayout.setHorizontalGroup(
+            BARRA_SUPERIORLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BARRA_SUPERIORLayout.createSequentialGroup()
+                .addComponent(CERRAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 726, Short.MAX_VALUE))
+        );
+        BARRA_SUPERIORLayout.setVerticalGroup(
+            BARRA_SUPERIORLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CERRAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BARRA_SUPERIOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 40));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -52,6 +100,11 @@ public class VISTA extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Rockwell", 0, 13)); // NOI18N
         jLabel6.setText("Username:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        txtusername.setForeground(new java.awt.Color(204, 204, 204));
+        txtusername.setText("Ingrese su nombre de usuario");
+        txtusername.setToolTipText("");
+        txtusername.setBorder(null);
         jPanel2.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 270, 30));
 
         jCheckBox1.setFont(new java.awt.Font("Rockwell", 0, 13)); // NOI18N
@@ -155,6 +208,8 @@ public class VISTA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BARRA_SUPERIOR;
+    private javax.swing.JPanel CERRAR;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
@@ -163,6 +218,7 @@ public class VISTA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txtpassword;
