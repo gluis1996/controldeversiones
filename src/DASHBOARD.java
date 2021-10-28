@@ -102,13 +102,12 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PANEL1 p1 = new PANEL1();
+        VENTAS p1 = new VENTAS();
         paneles(p1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       PANEL3 p3 = new PANEL3();
-        paneles(p3);
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
