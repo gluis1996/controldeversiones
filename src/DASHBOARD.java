@@ -36,7 +36,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         BASE.setBackground(new java.awt.Color(255, 255, 255));
         BASE.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BARRA_LATERAL.setBackground(new java.awt.Color(255, 0, 0));
+        BARRA_LATERAL.setBackground(new java.awt.Color(153, 0, 0));
         BARRA_LATERAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("VENDER");
