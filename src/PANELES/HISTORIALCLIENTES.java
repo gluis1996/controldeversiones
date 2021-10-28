@@ -9,12 +9,12 @@ package PANELES;
  *
  * @author Jannarys
  */
-public class BRUS extends javax.swing.JPanel {
+public class HISTORIALCLIENTES extends javax.swing.JPanel {
 
     /**
      * Creates new form BRUS
      */
-    public BRUS() {
+    public HISTORIALCLIENTES() {
         initComponents();
     }
 

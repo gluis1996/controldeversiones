@@ -29,7 +29,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        CONTENDOR = new javax.swing.JPanel();
+        contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,18 +68,18 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 527));
 
-        javax.swing.GroupLayout CONTENDORLayout = new javax.swing.GroupLayout(CONTENDOR);
-        CONTENDOR.setLayout(CONTENDORLayout);
-        CONTENDORLayout.setHorizontalGroup(
-            CONTENDORLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
+        contenedor.setLayout(contenedorLayout);
+        contenedorLayout.setHorizontalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
-        CONTENDORLayout.setVerticalGroup(
-            CONTENDORLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contenedorLayout.setVerticalGroup(
+            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 530, Short.MAX_VALUE)
         );
 
-        BASE.add(CONTENDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 800, 530));
+        BASE.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 800, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,8 +96,8 @@ public class DASHBOARD extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        PANEL2 p2 = new PANEL2();
-        paneles(p2);
+        HISTORIALCLIENTES HC = new HISTORIALCLIENTES();
+        paneles(HC);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -149,7 +149,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BARRA_LATERAL;
     private javax.swing.JPanel BASE;
-    private javax.swing.JPanel CONTENDOR;
+    private javax.swing.JPanel contenedor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
