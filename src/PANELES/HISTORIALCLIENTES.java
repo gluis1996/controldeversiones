@@ -43,17 +43,17 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
 
         jLabel3.setText("jLabel3");
 
-        setBackground(new java.awt.Color(0, 0, 255));
+        setBackground(new java.awt.Color(0, 0, 153));
         setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 51));
         jPanel1.setLayout(null);
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jTable1.setForeground(new java.awt.Color(102, 102, 102));
+        jTable1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTable1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -83,8 +83,10 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(50, 10, 490, 20);
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 102));
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton1.setText("ELIMINAR CLIENTE");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -121,8 +123,10 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(10, 90, 110, 19);
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 102));
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton2.setText("BUSCAR CLIENTE");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

@@ -30,6 +30,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         contenedor = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,50 +40,60 @@ public class DASHBOARD extends javax.swing.JFrame {
         BARRA_LATERAL.setBackground(new java.awt.Color(153, 0, 0));
         BARRA_LATERAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 255));
+        jButton1.setFont(new java.awt.Font("MS Reference Sans Serif", 3, 14)); // NOI18N
         jButton1.setText("VENDER");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 90, -1));
+        BARRA_LATERAL.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 130, 40));
 
+        jButton2.setBackground(new java.awt.Color(0, 51, 255));
+        jButton2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         jButton2.setText("H . CLIENTES");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        BARRA_LATERAL.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 130, 40));
 
+        jButton3.setBackground(new java.awt.Color(0, 51, 255));
+        jButton3.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         jButton3.setText("STOCK P");
+        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 40));
 
+        jButton4.setBackground(new java.awt.Color(0, 51, 255));
+        jButton4.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         jButton4.setText("DE. VENTA");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, -1));
+        BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 130, 40));
 
-        BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 527));
+        BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 530));
 
-        javax.swing.GroupLayout contenedorLayout = new javax.swing.GroupLayout(contenedor);
-        contenedor.setLayout(contenedorLayout);
-        contenedorLayout.setHorizontalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-        );
-        contenedorLayout.setVerticalGroup(
-            contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
-        );
+        contenedor.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Engravers MT", 2, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setText("CONFECCIONES GV");
+        jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        contenedor.add(jLabel1);
+        jLabel1.setBounds(20, 140, 760, 170);
 
         BASE.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 800, 530));
 
@@ -163,5 +174,6 @@ public class DASHBOARD extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
