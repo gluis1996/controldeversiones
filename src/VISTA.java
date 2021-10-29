@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 
 public class VISTA extends javax.swing.JFrame {
@@ -13,8 +12,6 @@ public class VISTA extends javax.swing.JFrame {
 
     public VISTA() {
         initComponents();
-        this.setLocationRelativeTo(null);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -189,8 +186,6 @@ public class VISTA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //https://es.stackoverflow.com/questions/248516/login-por-medio-de-txt
-        //http://ocw.udl.cat/enginyeria-i-arquitectura/programacio-2/continguts-1/4-manejo-bai81sico-de-archivos-en-java.pdf
         String usua = txtusername.getText();
         String pass = txtpassword.getText();
         DASHBOARD ds = new DASHBOARD();
@@ -287,6 +282,7 @@ public class VISTA extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new VISTA().setVisible(true);
             }
