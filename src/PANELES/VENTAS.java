@@ -47,12 +47,12 @@ public class VENTAS extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(780, 510));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setMinimumSize(new java.awt.Dimension(780, 510));
         jPanel1.setPreferredSize(new java.awt.Dimension(780, 510));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setLayout(null);
 
         jTextField2.setActionCommand("<Not Set>");
@@ -116,12 +116,12 @@ public class VENTAS extends javax.swing.JPanel {
         jPanel3.add(jTextField4);
         jTextField4.setBounds(20, 210, 110, 30);
 
-        jPanel4.setBackground(new java.awt.Color(204, 102, 255));
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
         jPanel4.setLayout(null);
         jPanel3.add(jPanel4);
         jPanel4.setBounds(10, 40, 500, 210);
 
-        jTable1.setBackground(new java.awt.Color(102, 255, 102));
+        jTable1.setBackground(new java.awt.Color(153, 204, 255));
         jTable1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 0, 0)));
         jTable1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTable1.setForeground(new java.awt.Color(51, 0, 51));
@@ -158,7 +158,7 @@ public class VENTAS extends javax.swing.JPanel {
         jPanel3.add(jTextField6);
         jTextField6.setBounds(570, 450, 180, 40);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
         jButton1.setBackground(new java.awt.Color(0, 51, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -207,10 +207,9 @@ public class VENTAS extends javax.swing.JPanel {
         jPanel2.setBounds(560, 60, 190, 175);
 
         jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(255, 204, 0));
+        jTextPane1.setBackground(new java.awt.Color(153, 153, 255));
         jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(204, 0, 0));
         jTextPane1.setText("SOFTWARE DE PUNTO DE VENTA");
         jScrollPane3.setViewportView(jTextPane1);
 
