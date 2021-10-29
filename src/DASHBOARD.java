@@ -64,6 +64,11 @@ public class DASHBOARD extends javax.swing.JFrame {
         BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         jButton4.setText("DE. VENTA");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, -1));
 
         BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 527));
@@ -107,8 +112,13 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
+
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        VENTAS1 v1 = new VENTAS1();
+        paneles(v1);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,7 +131,7 @@ public class DASHBOARD extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
