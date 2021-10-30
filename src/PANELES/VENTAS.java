@@ -25,7 +25,6 @@ public class VENTAS extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jTextField4 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -36,6 +35,7 @@ public class VENTAS extends javax.swing.JPanel {
         jTextField8 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField6 = new javax.swing.JTextField();
@@ -48,25 +48,15 @@ public class VENTAS extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(780, 510));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(780, 510));
         jPanel1.setPreferredSize(new java.awt.Dimension(780, 510));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 51));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setLayout(null);
 
-        jTextField1.setForeground(new java.awt.Color(255, 0, 0));
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(20, 50, 133, 40);
-
-        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setLayout(null);
 
         jTextField4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Precio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
@@ -76,10 +66,10 @@ public class VENTAS extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jTextField4);
-        jTextField4.setBounds(10, 170, 110, 40);
+        jTextField4.setBounds(10, 160, 110, 30);
 
         jComboBox1.setForeground(new java.awt.Color(204, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "POLERA CON CIERRE", "POLERA ENTERA", "POLERA CORTA", "POLOS" }));
         jComboBox1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,16 +77,16 @@ public class VENTAS extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jComboBox1);
-        jComboBox1.setBounds(10, 130, 200, 30);
+        jComboBox1.setBounds(10, 120, 200, 30);
 
         jTextField3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Cantidad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
         jPanel4.add(jTextField3);
-        jTextField3.setBounds(220, 130, 100, 40);
+        jTextField3.setBounds(220, 120, 100, 30);
 
         jTextField5.setForeground(new java.awt.Color(204, 0, 0));
         jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Fecha", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
         jPanel4.add(jTextField5);
-        jTextField5.setBounds(330, 130, 180, 40);
+        jTextField5.setBounds(330, 120, 180, 30);
 
         jTextField7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Dirección", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +95,7 @@ public class VENTAS extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jTextField7);
-        jTextField7.setBounds(10, 60, 362, 37);
+        jTextField7.setBounds(10, 50, 362, 30);
 
         jTextField2.setActionCommand("<Not Set>");
         jTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Nombres y Apellidos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
@@ -115,26 +105,36 @@ public class VENTAS extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jTextField2);
-        jTextField2.setBounds(150, 10, 320, 40);
+        jTextField2.setBounds(150, 10, 350, 30);
 
         jTextField8.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "N° de Boleta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
         jPanel4.add(jTextField8);
-        jTextField8.setBounds(390, 60, 120, 37);
+        jTextField8.setBounds(380, 50, 120, 30);
 
         jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Elija los productos que comprara:");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(10, 100, 240, 20);
+        jLabel2.setBounds(10, 90, 240, 20);
 
-        jButton5.setBackground(new java.awt.Color(0, 51, 102));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jButton5.setText("AGREGAR A COMPRA");
         jPanel4.add(jButton5);
-        jButton5.setBounds(140, 180, 150, 40);
+        jButton5.setBounds(370, 160, 140, 30);
+
+        jTextField1.setForeground(new java.awt.Color(255, 0, 0));
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextField1);
+        jTextField1.setBounds(10, 10, 133, 30);
 
         jPanel3.add(jPanel4);
-        jPanel4.setBounds(10, 40, 530, 240);
+        jPanel4.setBounds(20, 40, 520, 210);
 
         jTable1.setBackground(new java.awt.Color(153, 204, 255));
         jTable1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 0, 0)));
@@ -161,7 +161,7 @@ public class VENTAS extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(0, 290, 760, 180);
+        jScrollPane1.setBounds(10, 260, 760, 180);
 
         jTextField6.setForeground(new java.awt.Color(0, 0, 204));
         jTextField6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Total:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11), new java.awt.Color(255, 0, 0))); // NOI18N
@@ -171,7 +171,7 @@ public class VENTAS extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jTextField6);
-        jTextField6.setBounds(570, 470, 180, 40);
+        jTextField6.setBounds(580, 450, 180, 40);
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -219,7 +219,7 @@ public class VENTAS extends javax.swing.JPanel {
         );
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(560, 110, 190, 168);
+        jPanel2.setBounds(570, 40, 190, 175);
 
         jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,17 +227,17 @@ public class VENTAS extends javax.swing.JPanel {
         jPanel3.add(jLabel1);
         jLabel1.setBounds(100, 0, 350, 40);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 770, 520));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

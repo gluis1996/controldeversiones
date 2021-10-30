@@ -37,52 +37,52 @@ public class DASHBOARD extends javax.swing.JFrame {
         BASE.setBackground(new java.awt.Color(255, 255, 255));
         BASE.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BARRA_LATERAL.setBackground(new java.awt.Color(153, 0, 0));
+        BARRA_LATERAL.setBackground(new java.awt.Color(0, 0, 0));
         BARRA_LATERAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 255));
-        jButton1.setFont(new java.awt.Font("MS Reference Sans Serif", 3, 14)); // NOI18N
-        jButton1.setText("VENDER");
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
+        jButton1.setText("REGISTRAR VENTA");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 130, 40));
+        BARRA_LATERAL.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 130, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 51, 255));
-        jButton2.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
-        jButton2.setText("H . CLIENTES");
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
+        jButton2.setText("HISTORIAL CLIENTES");
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 130, 40));
+        BARRA_LATERAL.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 130, 30));
 
-        jButton3.setBackground(new java.awt.Color(0, 51, 255));
-        jButton3.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
-        jButton3.setText("STOCK P");
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
+        jButton3.setText("STOCK PRODUCTO");
         jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 130, 40));
+        BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 130, 40));
 
-        jButton4.setBackground(new java.awt.Color(0, 51, 255));
-        jButton4.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
-        jButton4.setText("DE. VENTA");
+        jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
+        jButton4.setText("DETALLE VENTA");
         jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 130, 40));
+        BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 130, 30));
 
         BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 530));
 
