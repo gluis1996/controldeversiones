@@ -63,7 +63,7 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "DNI", "Cliente", "Direccion", "N# de Boleta", "Fecha", "Precio Total"
+                "DNI", "Cliente", "Direccion", "N° de Boleta", "Fecha", "Precio Total"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -72,17 +72,17 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jScrollPane1.setBounds(10, 190, 730, 300);
 
         jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("BIENVENIDO al HISTORIAL DE CLIENTES...");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 0, 540, 40);
+        jLabel1.setBounds(90, 0, 540, 40);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Para ver historial del cliente:");
         jPanel2.add(jLabel4);
         jLabel4.setBounds(10, 10, 220, 19);
@@ -96,13 +96,13 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jTextField1.setBounds(120, 40, 110, 30);
 
         jLabel6.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Ingrese su DNI:");
         jPanel2.add(jLabel6);
         jLabel6.setBounds(10, 40, 110, 40);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jButton2.setText("BUSCAR CLIENTE");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(60, 90, 120, 30);
+        jButton2.setBounds(60, 90, 120, 40);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(50, 40, 260, 140);
@@ -120,7 +120,7 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jPanel3.setLayout(null);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jButton1.setText("ELIMINAR CLIENTE");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +129,7 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jButton1);
-        jButton1.setBounds(70, 90, 110, 30);
+        jButton1.setBounds(70, 90, 120, 40);
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,13 +140,13 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jTextField2.setBounds(150, 40, 100, 30);
 
         jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingrese su DNI:");
         jPanel3.add(jLabel2);
         jLabel2.setBounds(20, 50, 110, 20);
 
         jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Para eliminar historial del cliente:");
         jPanel3.add(jLabel5);
         jLabel5.setBounds(10, 10, 240, 19);
