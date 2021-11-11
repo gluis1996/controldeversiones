@@ -4,7 +4,6 @@ import DETALLE_VENTAS.DETALLE_VENTAS;
 import REGISTRO_VENTAS.REGISTRO_VENTAS;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import PANELES.*;
 
 public class DASHBOARD extends javax.swing.JFrame {
 
