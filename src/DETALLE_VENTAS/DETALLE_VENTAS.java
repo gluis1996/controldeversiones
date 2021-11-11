@@ -1,4 +1,4 @@
-package PANELES;
+package DETALLE_VENTAS;
 
 public class DETALLE_VENTAS extends javax.swing.JPanel {
 

@@ -1,4 +1,4 @@
-package PANELES;
+package REGISTRO_VENTAS;
 
 public class REGISTRO_VENTAS extends javax.swing.JPanel {
 
@@ -38,6 +38,10 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jTextField4 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(780, 510));
 
@@ -109,7 +113,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         );
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(570, 40, 190, 175);
+        jPanel2.setBounds(570, 40, 0, 0);
 
         jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 18)); // NOI18N
         jLabel1.setText("REGITRO DE VENTA");
@@ -134,7 +138,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jPanel3.add(jTextField2);
         jTextField2.setBounds(50, 110, 300, 20);
         jPanel3.add(jSeparator1);
-        jSeparator1.setBounds(50, 160, 460, 10);
+        jSeparator1.setBounds(50, 160, 460, 2);
 
         jLabel5.setText("SELECCIONE LOS PRODUCTOS");
         jPanel3.add(jLabel5);
@@ -181,6 +185,18 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jButton1.setText("AGREGAR");
         jPanel3.add(jButton1);
         jButton1.setBounds(590, 220, 120, 30);
+        jPanel3.add(jTextField5);
+        jTextField5.setBounds(160, 240, 70, 20);
+
+        jLabel11.setText("PRECIO UNIT");
+        jPanel3.add(jLabel11);
+        jLabel11.setBounds(160, 220, 70, 14);
+        jPanel3.add(jTextField6);
+        jTextField6.setBounds(370, 110, 90, 20);
+
+        jLabel12.setText("CODIGO PRO");
+        jPanel3.add(jLabel12);
+        jLabel12.setBounds(370, 90, 70, 14);
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
 
@@ -211,6 +227,8 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -229,6 +247,8 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

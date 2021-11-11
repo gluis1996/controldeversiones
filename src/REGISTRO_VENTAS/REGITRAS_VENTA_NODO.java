@@ -1,4 +1,6 @@
-package PANELES;
+package REGISTRO_VENTAS;
+
+import REGISTRO_VENTAS.REGISTRO_VENTAS;
 
 public class REGITRAS_VENTA_NODO {
     String dni, nombres, direccion,producto,color,envio;

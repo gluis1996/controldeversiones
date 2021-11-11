@@ -1,4 +1,7 @@
 
+import HISTORIAL_CLIENTE.HISTORIALCLIENTES;
+import DETALLE_VENTAS.DETALLE_VENTAS;
+import REGISTRO_VENTAS.REGISTRO_VENTAS;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import PANELES.*;
@@ -27,7 +30,6 @@ public class DASHBOARD extends javax.swing.JFrame {
         BARRA_LATERAL = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -61,17 +63,6 @@ public class DASHBOARD extends javax.swing.JFrame {
             }
         });
         BARRA_LATERAL.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 130, 30));
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
-        jButton3.setText("STOCK PRODUCTO");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        BARRA_LATERAL.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
@@ -122,10 +113,6 @@ public class DASHBOARD extends javax.swing.JFrame {
         paneles(p1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         DETALLE_VENTAS v1 = new DETALLE_VENTAS();
         paneles(v1);
@@ -172,7 +159,6 @@ public class DASHBOARD extends javax.swing.JFrame {
     private javax.swing.JPanel contenedor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
