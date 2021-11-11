@@ -1,8 +1,8 @@
 package PANELES;
 
-public class VENTAS1 extends javax.swing.JPanel {
+public class DETALLE_VENTAS extends javax.swing.JPanel {
 
-    public VENTAS1() {
+    public DETALLE_VENTAS() {
         initComponents();
     }
 

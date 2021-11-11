@@ -118,7 +118,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VENTAS p1 = new VENTAS();
+        REGISTRO_VENTAS p1 = new REGISTRO_VENTAS();
         paneles(p1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -127,7 +127,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        VENTAS1 v1 = new VENTAS1();
+        DETALLE_VENTAS v1 = new DETALLE_VENTAS();
         paneles(v1);
     }//GEN-LAST:event_jButton4ActionPerformed
 
