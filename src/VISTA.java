@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -28,11 +27,12 @@ public class VISTA extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         txtpassword = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
+        cbxTusuario = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -56,13 +56,13 @@ public class VISTA extends javax.swing.JFrame {
         });
 
         CERRAR.setBackground(new java.awt.Color(204, 204, 255));
-        CERRAR.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        CERRAR.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CERRAR.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
         salir.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         salir.setText("X");
-        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         salir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,11 +116,11 @@ public class VISTA extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Rockwell", 0, 13)); // NOI18N
         jLabel3.setText("Password:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Rockwell", 0, 13)); // NOI18N
         jLabel6.setText("Username:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         txtusername.setForeground(new java.awt.Color(204, 204, 204));
         txtusername.setText("Ingrese su nombre de usuario");
@@ -131,11 +131,7 @@ public class VISTA extends javax.swing.JFrame {
                 txtusernameMousePressed(evt);
             }
         });
-        jPanel2.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 270, 30));
-
-        jCheckBox1.setFont(new java.awt.Font("Rockwell", 0, 13)); // NOI18N
-        jCheckBox1.setText("Recordar");
-        jPanel2.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel2.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 270, 30));
 
         jButton1.setBackground(new java.awt.Color(85, 110, 230));
         jButton1.setFont(new java.awt.Font("Rockwell", 0, 13)); // NOI18N
@@ -148,7 +144,7 @@ public class VISTA extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 270, 30));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 270, -1));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 270, -1));
 
         txtpassword.setForeground(new java.awt.Color(204, 204, 204));
         txtpassword.setText("********");
@@ -158,8 +154,14 @@ public class VISTA extends javax.swing.JFrame {
                 txtpasswordMousePressed(evt);
             }
         });
-        jPanel2.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 270, -1));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 270, 10));
+        jPanel2.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 270, -1));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 270, 10));
+
+        cbxTusuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "ADMISTRADOR", "VENDEDOR" }));
+        jPanel2.add(cbxTusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 270, -1));
+
+        jLabel1.setText("Tipo Usuario");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 338, 380));
 
@@ -186,25 +188,46 @@ public class VISTA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usua = txtusername.getText();
         String pass = txtpassword.getText();
-        DASHBOARD ds = new DASHBOARD();        
+        DASHBOARD DS = new DASHBOARD();
+        DASHBOARD2 DS2 = new DASHBOARD2();
         String linea;
+        String linea1;
         boolean con = false;
-
-        try (BufferedReader br = new BufferedReader(new FileReader("usuarios.txt"));) {
-            while ((linea = br.readLine()) != null) {
-                String palabra[] = linea.split(" ");
-                if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
-                    JOptionPane.showMessageDialog(null, "BIENBENIDO");
-                    con = true;
-                    dispose();
-                    ds.setVisible(true);
+        boolean con1 = false;
+        if (cbxTusuario.getSelectedItem().equals("VENDEDOR")) {
+            try (BufferedReader br = new BufferedReader(new FileReader("VENDEDOR.txt"));) {
+                while ((linea = br.readLine()) != null) {
+                    String palabra[] = linea.split(" ");
+                    if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
+                        JOptionPane.showMessageDialog(null, "BIENBENIDO");
+                        con = true;
+                        dispose();
+                        DS.setVisible(true);
+                    }
                 }
+                if (!con) {
+                    JOptionPane.showMessageDialog(null, "verifique el nombre del usuario o contraseña");
+                }
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "error en la bd");
             }
-            if (!con) {
-                JOptionPane.showMessageDialog(null, "verifique el nombre del usuario o contraseña");
+        } else if (cbxTusuario.getSelectedItem().equals("ADMISTRADOR")) {
+            try (BufferedReader br = new BufferedReader(new FileReader("ADMINISTRADOR.txt"));) {
+                while ((linea1 = br.readLine()) != null) {
+                    String palabra[] = linea1.split(" ");
+                    if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
+                        JOptionPane.showMessageDialog(null, "BIENBENIDO");
+                        con1 = true;
+                        dispose();
+                        DS2.setVisible(true);
+                    }
+                }
+                if (!con1) {
+                    JOptionPane.showMessageDialog(null, "verifique el nombre del usuario o contraseña");
+                }
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(null, "error en la bd");
             }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "error en la bd");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -289,8 +312,9 @@ public class VISTA extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BARRA_SUPERIOR;
     private javax.swing.JPanel CERRAR;
+    private javax.swing.JComboBox<String> cbxTusuario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

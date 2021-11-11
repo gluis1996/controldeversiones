@@ -1,15 +1,7 @@
-
 package PANELES;
 
-/**
- *
- * @author gonza
- */
 public class VENTAS extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PANEL1
-     */
     public VENTAS() {
         initComponents();
     }
