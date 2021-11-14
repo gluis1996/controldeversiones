@@ -19,28 +19,28 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtdni = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtnombres = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtdireccion = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        cbxcategoria = new javax.swing.JComboBox<>();
+        cbxcolor = new javax.swing.JComboBox<>();
+        txtcantidad = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbxenvios = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
+        txtprecioUnit = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtcodigo = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(780, 510));
@@ -113,20 +113,20 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         );
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(570, 40, 0, 0);
+        jPanel2.setBounds(570, 40, 190, 175);
 
         jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 18)); // NOI18N
         jLabel1.setText("REGITRO DE VENTA");
         jPanel3.add(jLabel1);
         jLabel1.setBounds(290, 0, 200, 40);
-        jPanel3.add(jTextField9);
-        jTextField9.setBounds(50, 60, 80, 20);
+        jPanel3.add(txtdni);
+        txtdni.setBounds(50, 60, 80, 20);
 
         jLabel3.setText("DNI:");
         jPanel3.add(jLabel3);
         jLabel3.setBounds(50, 40, 22, 14);
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(140, 60, 210, 20);
+        jPanel3.add(txtnombres);
+        txtnombres.setBounds(140, 60, 210, 20);
 
         jLabel2.setText("APELLIDOS Y NOMBRES");
         jPanel3.add(jLabel2);
@@ -135,8 +135,8 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jLabel4.setText("DIRECCION");
         jPanel3.add(jLabel4);
         jLabel4.setBounds(50, 90, 70, 14);
-        jPanel3.add(jTextField2);
-        jTextField2.setBounds(50, 110, 300, 20);
+        jPanel3.add(txtdireccion);
+        txtdireccion.setBounds(50, 110, 300, 20);
         jPanel3.add(jSeparator1);
         jSeparator1.setBounds(50, 160, 460, 2);
 
@@ -144,23 +144,23 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jPanel3.add(jLabel5);
         jLabel5.setBounds(50, 140, 160, 14);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "POLERAS CORTAS", "POLERAS CIERRE" }));
-        jPanel3.add(jComboBox1);
-        jComboBox1.setBounds(50, 190, 120, 20);
+        cbxcategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "POLERAS CORTAS", "POLERAS CIERRE" }));
+        jPanel3.add(cbxcategoria);
+        cbxcategoria.setBounds(50, 190, 120, 20);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "NEGRO", "ROJO", "AZUL MARINO" }));
-        jPanel3.add(jComboBox2);
-        jComboBox2.setBounds(190, 190, 150, 20);
-        jPanel3.add(jTextField3);
-        jTextField3.setBounds(50, 240, 50, 20);
+        cbxcolor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "NEGRO", "ROJO", "AZUL MARINO" }));
+        jPanel3.add(cbxcolor);
+        cbxcolor.setBounds(190, 190, 150, 20);
+        jPanel3.add(txtcantidad);
+        txtcantidad.setBounds(50, 240, 50, 20);
 
         jLabel6.setText("CANTIDAD");
         jPanel3.add(jLabel6);
         jLabel6.setBounds(50, 220, 60, 14);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "PUNO", "JULIACA", "CERRO DE PAZCO" }));
-        jPanel3.add(jComboBox3);
-        jComboBox3.setBounds(360, 190, 130, 20);
+        cbxenvios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "PUNO", "JULIACA", "CERRO DE PAZCO" }));
+        jPanel3.add(cbxenvios);
+        cbxenvios.setBounds(360, 190, 130, 20);
 
         jLabel7.setText("PRODUCTO");
         jPanel3.add(jLabel7);
@@ -185,14 +185,14 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jButton1.setText("AGREGAR");
         jPanel3.add(jButton1);
         jButton1.setBounds(590, 220, 120, 30);
-        jPanel3.add(jTextField5);
-        jTextField5.setBounds(160, 240, 70, 20);
+        jPanel3.add(txtprecioUnit);
+        txtprecioUnit.setBounds(160, 240, 70, 20);
 
         jLabel11.setText("PRECIO UNIT");
         jPanel3.add(jLabel11);
         jLabel11.setBounds(160, 220, 70, 14);
-        jPanel3.add(jTextField6);
-        jTextField6.setBounds(370, 110, 90, 20);
+        jPanel3.add(txtcodigo);
+        txtcodigo.setBounds(370, 110, 90, 20);
 
         jLabel12.setText("CODIGO PRO");
         jPanel3.add(jLabel12);
@@ -218,13 +218,13 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbxcategoria;
+    private javax.swing.JComboBox<String> cbxcolor;
+    private javax.swing.JComboBox<String> cbxenvios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -243,12 +243,12 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtcantidad;
+    private javax.swing.JTextField txtcodigo;
+    private javax.swing.JTextField txtdireccion;
+    private javax.swing.JTextField txtdni;
+    private javax.swing.JTextField txtnombres;
+    private javax.swing.JTextField txtprecioUnit;
     // End of variables declaration//GEN-END:variables
 }
