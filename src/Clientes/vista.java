@@ -132,72 +132,72 @@ public class vista extends javax.swing.JFrame {
         );
 
         jPanel3.add(jPanel4);
-        jPanel4.setBounds(570, 40, 190, 175);
+        jPanel4.setBounds(570, 40, 190, 166);
 
         jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 18)); // NOI18N
         jLabel1.setText("REGITRO DE VENTA");
         jPanel3.add(jLabel1);
         jLabel1.setBounds(290, 0, 200, 40);
         jPanel3.add(txtdni);
-        txtdni.setBounds(50, 60, 80, 20);
+        txtdni.setBounds(50, 60, 80, 24);
 
         jLabel3.setText("DNI:");
         jPanel3.add(jLabel3);
-        jLabel3.setBounds(50, 40, 22, 14);
+        jLabel3.setBounds(50, 40, 70, 16);
         jPanel3.add(txtnombres);
-        txtnombres.setBounds(140, 60, 210, 20);
+        txtnombres.setBounds(140, 60, 210, 24);
 
         jLabel2.setText("APELLIDOS Y NOMBRES");
         jPanel3.add(jLabel2);
-        jLabel2.setBounds(140, 40, 120, 14);
+        jLabel2.setBounds(140, 40, 180, 16);
 
         jLabel4.setText("DIRECCION");
         jPanel3.add(jLabel4);
-        jLabel4.setBounds(50, 90, 70, 14);
+        jLabel4.setBounds(50, 90, 170, 16);
         jPanel3.add(txtdireccion);
-        txtdireccion.setBounds(50, 110, 300, 20);
+        txtdireccion.setBounds(50, 110, 300, 24);
         jPanel3.add(jSeparator1);
         jSeparator1.setBounds(50, 160, 460, 2);
 
         jLabel5.setText("SELECCIONE LOS PRODUCTOS");
         jPanel3.add(jLabel5);
-        jLabel5.setBounds(50, 140, 160, 14);
+        jLabel5.setBounds(50, 140, 250, 16);
 
         cbxcategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "POLERAS CORTAS", "POLERAS CIERRE" }));
         jPanel3.add(cbxcategoria);
-        cbxcategoria.setBounds(50, 190, 120, 20);
+        cbxcategoria.setBounds(50, 190, 120, 26);
 
         cbxcolor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "NEGRO", "ROJO", "AZUL MARINO" }));
         jPanel3.add(cbxcolor);
-        cbxcolor.setBounds(190, 190, 150, 20);
+        cbxcolor.setBounds(190, 190, 150, 26);
         jPanel3.add(txtcantidad);
-        txtcantidad.setBounds(50, 240, 50, 20);
+        txtcantidad.setBounds(50, 240, 50, 24);
 
         jLabel6.setText("CANTIDAD");
         jPanel3.add(jLabel6);
-        jLabel6.setBounds(50, 220, 60, 14);
+        jLabel6.setBounds(50, 220, 80, 16);
 
         cbxenvios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "PUNO", "JULIACA", "CERRO DE PAZCO" }));
         jPanel3.add(cbxenvios);
-        cbxenvios.setBounds(360, 190, 130, 20);
+        cbxenvios.setBounds(360, 190, 130, 26);
 
         jLabel7.setText("PRODUCTO");
         jPanel3.add(jLabel7);
-        jLabel7.setBounds(50, 170, 70, 14);
+        jLabel7.setBounds(50, 170, 100, 16);
 
         jLabel8.setText("COLOR");
         jPanel3.add(jLabel8);
-        jLabel8.setBounds(190, 170, 40, 14);
+        jLabel8.setBounds(190, 170, 140, 16);
 
         jLabel9.setText("ENVIOS");
         jPanel3.add(jLabel9);
-        jLabel9.setBounds(360, 170, 60, 14);
+        jLabel9.setBounds(360, 170, 110, 16);
         jPanel3.add(jTextField4);
         jTextField4.setBounds(670, 450, 80, 20);
 
         jLabel10.setText("TOTAL");
         jPanel3.add(jLabel10);
-        jLabel10.setBounds(620, 450, 32, 10);
+        jLabel10.setBounds(620, 450, 37, 10);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -205,37 +205,31 @@ public class vista extends javax.swing.JFrame {
         jPanel3.add(jButton1);
         jButton1.setBounds(590, 220, 120, 30);
         jPanel3.add(txtprecioUnit);
-        txtprecioUnit.setBounds(160, 240, 70, 20);
+        txtprecioUnit.setBounds(160, 240, 70, 24);
 
         jLabel11.setText("PRECIO UNIT");
         jPanel3.add(jLabel11);
-        jLabel11.setBounds(160, 220, 70, 14);
+        jLabel11.setBounds(160, 220, 140, 16);
         jPanel3.add(txtcodigo);
-        txtcodigo.setBounds(370, 110, 90, 20);
+        txtcodigo.setBounds(370, 110, 90, 24);
 
         jLabel12.setText("CODIGO PRO");
         jPanel3.add(jLabel12);
-        jLabel12.setBounds(370, 90, 70, 14);
+        jLabel12.setBounds(370, 90, 120, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 780, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();

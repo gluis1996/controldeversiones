@@ -1,6 +1,6 @@
 
 import HISTORIAL_CLIENTE.HISTORIALCLIENTES;
-import DETALLE_VENTAS.DETALLE_VENTAS;
+import DETALLE_VENTAS.Detalle_Ventass;
 import REGISTRO_VENTAS.REGISTRO_VENTAS;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -32,6 +32,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,13 @@ public class DASHBOARD extends javax.swing.JFrame {
         contenedor.add(jLabel1);
         jLabel1.setBounds(20, 140, 760, 170);
 
+        jLabel2.setBackground(new java.awt.Color(255, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel2.setText("-------------------------------------------------------------");
+        contenedor.add(jLabel2);
+        jLabel2.setBounds(30, 250, 740, 30);
+
         BASE.add(contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 800, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -104,7 +112,6 @@ public class DASHBOARD extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         HISTORIALCLIENTES HC = new HISTORIALCLIENTES();
         paneles(HC);
-
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -113,8 +120,9 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        DETALLE_VENTAS v1 = new DETALLE_VENTAS();
+        Detalle_Ventass v1 = new Detalle_Ventass();
         paneles(v1);
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -160,5 +168,6 @@ public class DASHBOARD extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

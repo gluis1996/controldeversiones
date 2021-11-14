@@ -1,5 +1,4 @@
 package REGISTRO_VENTAS;
-
 public class REGISTRO_VENTAS extends javax.swing.JPanel {
 
     public REGISTRO_VENTAS() {
