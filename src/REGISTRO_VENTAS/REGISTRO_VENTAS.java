@@ -1,8 +1,53 @@
 package REGISTRO_VENTAS;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+import javax.swing.JOptionPane;
+
 public class REGISTRO_VENTAS extends javax.swing.JPanel {
+
+    clientes cl;
+    clientes arregloclientes[];
+    int num;
 
     public REGISTRO_VENTAS() {
         initComponents();
+        arregloclientes = new clientes[10000];
+        num = 0;
+    }
+
+    void grabararchivo(clientes cl) {
+        try {
+            FileWriter fw = new FileWriter("src\\REGISTRO_VENTAS\\registro_cliente.txt", true);
+            PrintWriter pw = new PrintWriter(fw);
+            pw.println(cl.dni + " | " + cl.nombres + " | " + cl.direccion);
+            pw.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error en la grabacion", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    void extraerdtos() {
+        String linea;
+        try (FileReader fr = new FileReader("src\\REGISTRO_VENTAS\\registro_cliente.txt");
+                BufferedReader br = new BufferedReader(fr);) {
+
+            while ((linea = br.readLine()) != null) {
+                StringTokenizer st = new StringTokenizer(linea, " | ");
+                String dni = st.nextToken();
+                String nombre = st.nextToken();
+                String direccion = st.nextToken();
+                cl = new clientes(dni, nombre, direccion);
+                arregloclientes[num] = cl;
+                num++;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error en extraer");
+        }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -83,6 +128,11 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton4.setText("REGISTRAR CLIENTE");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setText("GENERAR COMPRA");
@@ -212,9 +262,28 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        extraerdtos();
+        String nombre = "", direccion = "", dni = "";
+        for (int i = 0; i < num; i++) {
+            if (arregloclientes[i].dni.equalsIgnoreCase(txtdni.getText())) {
+                dni = arregloclientes[i].dni;
+                nombre = arregloclientes[i].nombres;
+                direccion = arregloclientes[i].direccion;
+            }
+        }
+        txtnombres.setText(nombre);
+        txtdireccion.setText(direccion);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String dni = txtdni.getText();
+        String nombre = txtnombres.getText();
+        String direccion = txtdireccion.getText();
+        clientes cl = new clientes(dni, nombre, direccion);
+        arregloclientes[num] = cl;
+        grabararchivo(cl);
+        num++;
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbxcategoria;

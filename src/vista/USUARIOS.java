@@ -1,3 +1,5 @@
+package vista;
+
 
 public class USUARIOS {
     String user;

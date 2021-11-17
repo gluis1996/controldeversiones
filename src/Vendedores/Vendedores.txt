@@ -1,0 +1,6 @@
+0101, Segundo Lopez , 75395185, 22/03/01, selopez, 1111
+0102, Luis Gonzalo, 85245691, 14/02/99, lugonzalo, 2222
+0103, Giomar Patricio, 73198245, 01/01/97, gipatricio, 3333
+0104, Julio Neyra, 34976182, 28/06/94, juneyra, 4444
+0105, Brus Bejarano, 76194346, 31/10/98, brbejarano, 5555
+0106, Eduardo Monaco, 84627913, 25/12/95, edmonaco, 6666

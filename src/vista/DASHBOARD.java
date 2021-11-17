@@ -1,3 +1,5 @@
+package vista;
+
 
 import HISTORIAL_CLIENTE.HISTORIALCLIENTES;
 import DETALLE_VENTAS.Detalle_Ventass;

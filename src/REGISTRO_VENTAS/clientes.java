@@ -1,5 +1,5 @@
 
-
+package REGISTRO_VENTAS;
 public class clientes {
     String dni,nombres,direccion;
 

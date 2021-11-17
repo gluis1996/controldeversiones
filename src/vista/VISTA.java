@@ -1,3 +1,5 @@
+package vista;
+
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -195,7 +197,7 @@ public class VISTA extends javax.swing.JFrame {
         boolean con = false;
         boolean con1 = false;
         if (cbxTusuario.getSelectedItem().equals("VENDEDOR")) {
-            try (BufferedReader br = new BufferedReader(new FileReader("VENDEDOR.txt"));) {
+            try (BufferedReader br = new BufferedReader(new FileReader("src\\vista\\VENDEDOR.txt"));) {
                 while ((linea = br.readLine()) != null) {
                     String palabra[] = linea.split(" ");
                     if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
@@ -212,7 +214,7 @@ public class VISTA extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "error en la bd");
             }
         } else if (cbxTusuario.getSelectedItem().equals("ADMISTRADOR")) {
-            try (BufferedReader br = new BufferedReader(new FileReader("ADMINISTRADOR.txt"));) {
+            try (BufferedReader br = new BufferedReader(new FileReader("src\\vista\\ADMINISTRADOR.txt"));) {
                 while ((linea1 = br.readLine()) != null) {
                     String palabra[] = linea1.split(" ");
                     if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
