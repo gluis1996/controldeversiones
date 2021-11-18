@@ -3,7 +3,7 @@ package vista;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import STOCK.vistaStock;
+import STOCK.*;
 import Vendedores.*;
 public class DASHBOARD2 extends javax.swing.JFrame {
 
