@@ -5,9 +5,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-
+import Vendedores.*;
 public class VISTA extends javax.swing.JFrame {
-
+    Vendedores vd;
     int ejex;
     int ejey;
 
@@ -190,6 +190,7 @@ public class VISTA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usua = txtusername.getText();
         String pass = txtpassword.getText();
+        Vendedores vdd[]={};
         DASHBOARD DS = new DASHBOARD();
         DASHBOARD2 DS2 = new DASHBOARD2();
         String linea;
@@ -197,10 +198,10 @@ public class VISTA extends javax.swing.JFrame {
         boolean con = false;
         boolean con1 = false;
         if (cbxTusuario.getSelectedItem().equals("VENDEDOR")) {
-            try (BufferedReader br = new BufferedReader(new FileReader("src\\vista\\VENDEDOR.txt"));) {
+            try (BufferedReader br = new BufferedReader(new FileReader("src\\Vendedores\\Vendedores.txt"));) {
                 while ((linea = br.readLine()) != null) {
-                    String palabra[] = linea.split(" ");
-                    if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
+                    String palabra[] = linea.split(", ");
+                    if (palabra[4].equals(usua) && palabra[5].equals(pass)) {
                         JOptionPane.showMessageDialog(null, "BIENBENIDO");
                         con = true;
                         dispose();

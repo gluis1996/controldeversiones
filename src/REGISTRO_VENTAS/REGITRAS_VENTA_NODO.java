@@ -24,4 +24,5 @@ public class REGITRAS_VENTA_NODO {
     }
     
     
+    
 }
