@@ -1,11 +1,9 @@
 package REGISTRO_VENTAS;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.DecimalFormat;
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,13 +18,15 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     String data[][] = {};
     REGITRAS_VENTA_NODO inicio, fin;
     int num;
+    File Fichero;
 
     public REGISTRO_VENTAS() {
         initComponents();
         arregloclientes = new clientes[1000];
-       
+
         modelo = new DefaultTableModel(data, cabecera);
         tabla.setModel(modelo);
+        Fichero = new File("src\\STOCK\\Stock.txt");
     }
 
     //INSENTAR AL INICIO LA VENTA
@@ -43,7 +43,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         Object fila[] = {num + 1, rvn.producto, rvn.cantidad, rvn.precio_unit, rvn.sub_total()};
         modelo.addRow(fila);
     }
-    */
+     */
 
     void VerDatos() {
         String dni, nombres, direccion, codigoProducto, producto, color, envios;
@@ -64,7 +64,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
             precio_unit = aux.precio_unit;
             num++;
             String numera = String.valueOf(num);
-            Object fila [] = {numera,producto,cantidad,precio_unit,aux.sub_total()};
+            Object fila[] = {numera, producto, cantidad, precio_unit, aux.sub_total()};
             modelo.addRow(fila);
             aux = aux.siguiente;
         }
@@ -108,6 +108,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         txtDescripcionProduc = new javax.swing.JTextField();
         txtcolorProducto = new javax.swing.JTextField();
+        BORRAR = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(780, 510));
 
@@ -286,6 +287,15 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jPanel3.add(txtcolorProducto);
         txtcolorProducto.setBounds(190, 190, 140, 22);
 
+        BORRAR.setText("borrar");
+        BORRAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BORRARActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BORRAR);
+        BORRAR.setBounds(380, 230, 72, 22);
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -318,9 +328,9 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         String dni = txtdni.getText();
         String nombre = txtnombres.getText();
         String direccion = txtdireccion.getText();
-        clientes cl = new clientes(dni, nombre, direccion);
-        arregloclientes[num] = cl;
-        grabararchivo(cl);
+        clientes cli = new clientes(dni, nombre, direccion);
+        arregloclientes[num] = cli;
+        grabararchivo(cli);
         num++;
     }//GEN-LAST:event_BTN_REGISTRARCLIENTEActionPerformed
 
@@ -330,7 +340,9 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     }//GEN-LAST:event_BTN_BUSCAR_PRODUCTOActionPerformed
 
     private void BTN_AGREGAR_COMPRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_AGREGAR_COMPRAActionPerformed
-
+        String cod = txtcodigoproducto.getText();
+        int cantidad = Integer.parseInt(txtcantidad.getText());
+        registarVentasEnElFichero(cod, cantidad);
     }//GEN-LAST:event_BTN_AGREGAR_COMPRAActionPerformed
 
     private void BTN_AÑADIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_AÑADIRActionPerformed
@@ -345,9 +357,13 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         Double precio_unit = Double.parseDouble(txtprecioUnit.getText());
 
         inicio = insertarAlInicio(inicio, dni, nombres, direccion, codigoProducto, producto, color, envios, cantidad, precio_unit);
-        
+
         VerDatos();
     }//GEN-LAST:event_BTN_AÑADIRActionPerformed
+
+    private void BORRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BORRARActionPerformed
+        borrar(Fichero);
+    }//GEN-LAST:event_BORRARActionPerformed
     void grabararchivo(clientes cl) {
         try {
             FileWriter fw = new FileWriter("src\\REGISTRO_VENTAS\\registro_cliente.txt", true);
@@ -399,7 +415,61 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         }
 
     }
+
+    void registarVentasEnElFichero(String codigo, int cantidad) {
+        File FicheroN = new File("src\\STOCK\\auxiliar.txt");
+        try {
+            FileReader fr = new FileReader(Fichero);
+            BufferedReader br = new BufferedReader(fr);
+
+            FileWriter fw = new FileWriter(FicheroN);
+            BufferedWriter bw = new BufferedWriter(fw);
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+                String separador = Pattern.quote(", ");
+                String f[] = linea.split(separador);
+                int da1;
+                String ax = "";
+                if (f[0].equals(codigo)) {
+                    da1 = Integer.parseInt(f[4]) - cantidad;
+                    f[4] = String.valueOf(da1);
+                    ax = f[0] + ", " + f[1] + ", " + f[2] + ", " + f[3] + ", " + f[4] + ", " + f[5];
+                    linea = ax;
+                    System.out.println("Valor modificado " + ax);
+                }
+                bw.write(linea + "\n");
+                System.out.println(linea);
+
+            }
+            br.close();
+            fr.close();
+            bw.close();
+            fw.close();
+            String nombraantiguo = Fichero.getName();
+            borrar(Fichero);
+            FicheroN.renameTo(Fichero);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    void borrar(File Ffichero) {
+        try {
+            // Comprovamos si el fichero existe  de ser así procedemos a borrar el archivo
+            if (Ffichero.exists()) {
+                Ffichero.delete();
+                System.out.println("Ficherro Borrado");
+            } else {
+                System.out.println("Fichero no encontrado");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BORRAR;
     private javax.swing.JButton BTN_AGREGAR_COMPRA;
     private javax.swing.JButton BTN_AÑADIR;
     private javax.swing.JButton BTN_BUSCAR_CLIENTE;
