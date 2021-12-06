@@ -60,7 +60,7 @@ private void paneles(JPanel p) {
                 trabajadoresActionPerformed(evt);
             }
         });
-        jPanel1.add(trabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 110, -1));
+        jPanel1.add(trabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, -1));
 
         jButton2.setText("REPORTE");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 110, -1));
