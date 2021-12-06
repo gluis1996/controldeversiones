@@ -1,7 +1,6 @@
 package REGISTRO_VENTAS;
 
 import java.io.*;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.util.regex.Pattern;
@@ -32,8 +31,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         modelo = new DefaultTableModel(data, cabecera);
         tabla.setModel(modelo);
         Fichero = new File("src\\STOCK\\Stock.txt");
-        String nombre = txtcodigoVenta.getText();
-        FicheroVenta = new File("src\\FicheroVentas\\"+nombre+".txt");
+        
     }
 
     /*INSENTAR AL INICIO LA VENTA
@@ -115,6 +113,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         txtcolorProducto = new javax.swing.JTextField();
         txtcodigoVenta = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(780, 510));
 
@@ -299,6 +298,14 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jPanel3.add(jLabel13);
         jLabel13.setBounds(140, 40, 120, 16);
 
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1);
+        jButton1.setBounds(470, 110, 30, 30);
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -343,6 +350,8 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     }//GEN-LAST:event_BTN_BUSCAR_PRODUCTOActionPerformed
 
     private void BTN_AGREGAR_COMPRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_AGREGAR_COMPRAActionPerformed
+        String nombre = txtcodigoVenta.getText();
+        FicheroVenta = new File("src\\FicheroVentas\\"+nombre+".txt");        
         String cod = txtcodigoproducto.getText();
         int cantidad = Integer.parseInt(txtcantidad.getText());
         //registarVentasEnElFichero(cod, cantidad);
@@ -382,6 +391,12 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         registarVentasEnElFichero(codigoProducto, cantidad);
 
     }//GEN-LAST:event_BTN_AÑADIRActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       VistaStock vs = new VistaStock();
+       vs.setVisible(true);
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
     void grabararchivo(clientes cl) {
         try {
             FileWriter fw = new FileWriter("src\\REGISTRO_VENTAS\\registro_cliente.txt", true);
@@ -493,6 +508,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     private javax.swing.JButton BTN_BUSCAR_PRODUCTO;
     private javax.swing.JButton BTN_REGISTRARCLIENTE;
     private javax.swing.JComboBox<String> cbxenvios;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

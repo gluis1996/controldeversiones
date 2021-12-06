@@ -37,6 +37,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GESTION DE VENTA");
 
         BASE.setBackground(new java.awt.Color(255, 255, 255));
         BASE.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
