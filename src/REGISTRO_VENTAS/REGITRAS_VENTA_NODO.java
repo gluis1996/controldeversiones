@@ -94,7 +94,7 @@ public class REGITRAS_VENTA_NODO {
         this.precio_unit = precio_unit;
     }
 
-
+    
     public String toString() {
         return dni + ", " + nombres + ", " + direccion + ", " + codigoProducto + ", "
                 + producto + ", " + color + ", " + envio + ", " + cantidad + ", "

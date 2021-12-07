@@ -34,14 +34,9 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
 
         jLabel3.setText("jLabel3");
 
@@ -55,21 +50,21 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "DNI", "Cliente", "Direccion", "N° de Boleta", "Fecha", "Precio Total"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 190, 730, 300);
+        jScrollPane1.setBounds(10, 140, 730, 300);
 
         jLabel1.setFont(new java.awt.Font("Felix Titling", 1, 24)); // NOI18N
         jLabel1.setText("BIENVENIDO al HISTORIAL DE CLIENTES...");
@@ -84,14 +79,6 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jLabel4.setText("Para ver historial del cliente:");
         jPanel2.add(jLabel4);
         jLabel4.setBounds(10, 10, 220, 19);
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(120, 40, 110, 30);
 
         jLabel6.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         jLabel6.setText("Ingrese su DNI:");
@@ -108,62 +95,16 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(60, 90, 120, 40);
+        jButton2.setBounds(260, 50, 130, 30);
+        jPanel2.add(jTextField3);
+        jTextField3.setBounds(120, 50, 130, 22);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(50, 40, 260, 140);
-
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel3.setLayout(null);
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jButton1.setText("ELIMINAR CLIENTE");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton1);
-        jButton1.setBounds(70, 90, 120, 40);
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField2);
-        jTextField2.setBounds(150, 40, 100, 30);
-
-        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel2.setText("Ingrese su DNI:");
-        jPanel3.add(jLabel2);
-        jLabel2.setBounds(20, 50, 110, 20);
-
-        jLabel5.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
-        jLabel5.setText("Para eliminar historial del cliente:");
-        jPanel3.add(jLabel5);
-        jLabel5.setBounds(10, 10, 240, 19);
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(400, 40, 260, 140);
+        jPanel2.setBounds(30, 40, 580, 90);
 
         add(jPanel1);
         jPanel1.setBounds(10, 10, 780, 510);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -171,20 +112,15 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
