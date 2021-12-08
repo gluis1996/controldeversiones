@@ -86,7 +86,7 @@ private void paneles(JPanel p) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      vistaStock vs = new vistaStock();
+      VISTAStockk vs = new VISTAStockk();
         paneles(vs);
     }//GEN-LAST:event_jButton1ActionPerformed
 
