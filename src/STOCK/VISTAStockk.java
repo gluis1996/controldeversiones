@@ -216,8 +216,6 @@ public class VISTAStockk extends javax.swing.JPanel {
         Desabilitar();
         LimpiarEntradas();
         VerDatos();
-        
-        //GrabarArchivo(lc);
     }//GEN-LAST:event_jbt_modificarActionPerformed
 
     private void jbt_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_eliminarActionPerformed
@@ -228,8 +226,7 @@ public class VISTAStockk extends javax.swing.JPanel {
         if(lc==null){
             JOptionPane.showMessageDialog(this, "La lista esta vacia");       
         }
-        Desabilitar();  
-        //ExtraerdeArchivo();
+        Desabilitar(); 
         
     }//GEN-LAST:event_jbt_eliminarActionPerformed
 
@@ -421,7 +418,7 @@ public class VISTAStockk extends javax.swing.JPanel {
  
     void GrabarArchivo(Nodo lc) {
         try {
-            FileWriter fw = new FileWriter("Stock.txt", true);
+            FileWriter fw = new FileWriter("src\\STOCK\\Stock.txt", true);
             PrintWriter pw = new PrintWriter(fw);
             //"ID","NOMBRE","PRECIO","CATEGORIA","COLOR","CANTIDAD️"
             pw.println(lc.id+"|"+lc.nombre+"|"+lc.precio+"|"+lc.categoria+"|"+lc.color+"|"+lc.cantidad);
@@ -433,7 +430,7 @@ public class VISTAStockk extends javax.swing.JPanel {
 
     void ExtraerdeArchivo() {
         String linea;
-        try (FileReader fr = new FileReader("Stock.txt");
+        try (FileReader fr = new FileReader("src\\STOCK\\Stock.txt");
                 BufferedReader br = new BufferedReader(fr);) {
 
             while ((linea = br.readLine()) != null) {
