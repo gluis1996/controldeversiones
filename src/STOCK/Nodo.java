@@ -1,21 +1,22 @@
 package STOCK;
-public class Nodo {
+public class Nodo{
     
     String id;
     String nombre;
     String precio;
     String categoria;
-    String cantidad;
     String color;
+    String cantidad;    
     Nodo enlace;
         
-    public Nodo(String id, String nombre, String precio, String categoria, String cantidad, String color) {
+    public Nodo(String id, String nombre, String precio, String categoria, String color, String cantidad) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
-        this.cantidad = cantidad;
         this.color = color;
+        this.cantidad = cantidad;
+        
         enlace = this;//enlace a si mismo
     } 
 
@@ -51,20 +52,20 @@ public class Nodo {
         this.categoria = categoria;
     }
 
-    public String getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(String cantidad) {
-        this.cantidad = cantidad;
-    }
-
     public String getColor() {
         return color;
     }
 
     public void setColor(String color) {
         this.color = color;
+    }
+    
+    public String getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
     }
 
     public Nodo getEnlace() {

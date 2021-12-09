@@ -1,46 +1,33 @@
 package STOCK;
 
 import java.io.*;
-import java.util.StringTokenizer;
+import java.util.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import STOCK.Nodo;
 
 public class VISTAStockk extends javax.swing.JPanel {
     
-    public Nodo lc;
-    public Nodo pFound;
-    int num= 0;
-    
     DefaultTableModel miModelo;
     String[] cabecera={"ID","NOMBRE","PRECIO","CATEGORIA","COLOR","CANTIDAD️"};
     String[][] data={};
+    
+    public Nodo lc;
+    public Nodo pFound;
+    int num = 0;
+    
     Nodo DN;
     Nodo dn[];
-    
-    //clientes arregloclientes[];
-    /*DN = new Nodo(dni, nombre, direccion);
-                dn[num] = Nodo;
-                num++;
-    clientes cl;
-    clientes arregloclientes[];*/
-    File Fichero;
 
     public VISTAStockk() {
         initComponents();
         dn = new Nodo[1000];
         lc = pFound = null;
-        
+                
         miModelo = new DefaultTableModel(data, cabecera);
         jTablestock.setModel(miModelo);
-        Fichero = new File("src\\STOCK\\Stock.txt");
         ExtraerdeArchivo();
-    }
-
-    void mostarEntabla(Nodo nd){
-    Object Fila [] = {nd.id,nd.nombre,nd.precio,nd.categoria,nd.color,nd.cantidad};
-    miModelo.addRow(Fila);
-    }
+    }    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -163,13 +150,10 @@ public class VISTAStockk extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(0, 0, 51));
         jLabel9.setText("..............................................................................");
         jLabel9.setToolTipText("");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 780, 40));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 780, 40));
 
         jTablestock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -195,9 +179,14 @@ public class VISTAStockk extends javax.swing.JPanel {
         });
         jPanel1.add(jbt_mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 110, 40));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 790, 515));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 800, 515));
     }// </editor-fold>//GEN-END:initComponents
 
+    void mostarEntabla(Nodo lc){
+       Object Fila [] = {lc.id,lc.nombre,lc.precio,lc.categoria,lc.color,lc.cantidad};
+       miModelo.addRow(Fila);
+    }
+    
     private void jbt_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_guardarActionPerformed
         // TODO add your handling code here:
         String id=jtf_ID.getText();
@@ -208,10 +197,8 @@ public class VISTAStockk extends javax.swing.JPanel {
         String cantidad=jtf_cantidad.getText().toUpperCase();
               
         lc = InsertarFinal(lc,id,nombre,precio,categoria,color,cantidad);
-        dn[num] = lc;
+        dn[num] = lc;        
         GrabarArchivo(lc);
-        num++;        
-        
         LimpiarEntradas();       
         VerDatos();
        
@@ -223,12 +210,14 @@ public class VISTAStockk extends javax.swing.JPanel {
         pFound.nombre=jtf_nombre.getText();
         pFound.precio=jtf_precio.getText();
         pFound.categoria=jcb_categoria.getSelectedItem().toString();
-        pFound.cantidad=jtf_cantidad.getText();
         pFound.color=jcb_color.getSelectedItem().toString();
-        
+        pFound.cantidad=jtf_cantidad.getText();
+               
         Desabilitar();
         LimpiarEntradas();
         VerDatos();
+        
+        //GrabarArchivo(lc);
     }//GEN-LAST:event_jbt_modificarActionPerformed
 
     private void jbt_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_eliminarActionPerformed
@@ -239,6 +228,9 @@ public class VISTAStockk extends javax.swing.JPanel {
         if(lc==null){
             JOptionPane.showMessageDialog(this, "La lista esta vacia");       
         }
+        Desabilitar();  
+        //ExtraerdeArchivo();
+        
     }//GEN-LAST:event_jbt_eliminarActionPerformed
 
     private void jbt_mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_mostrarActionPerformed
@@ -251,24 +243,7 @@ public class VISTAStockk extends javax.swing.JPanel {
             
             if(pFound!=null){               
               jtf_nombre.setText(pFound.nombre);
-              jtf_precio.setText(pFound.precio); 
               
-              if(pFound.color.equalsIgnoreCase("ROJO")){
-                  jcb_color.setSelectedIndex(0);           
-              }else if(pFound.color.equalsIgnoreCase("AZUL")){
-                  jcb_color.setSelectedIndex(1);
-              }else if(pFound.color.equalsIgnoreCase("NEGRO")){
-                  jcb_color.setSelectedIndex(2);
-              }else if(pFound.color.equalsIgnoreCase("BLANCO")){
-                  jcb_color.setSelectedIndex(3);
-              }else if(pFound.color.equalsIgnoreCase("ROSA")){
-                  jcb_color.setSelectedIndex(4);
-              }else if(pFound.color.equalsIgnoreCase("VERDE")){
-                  jcb_color.setSelectedIndex(5);
-              }
-              
-              jtf_cantidad.setText(pFound.cantidad);
-
               if(pFound.categoria.equalsIgnoreCase("POLERA CORTA")){
                   jcb_categoria.setSelectedIndex(0);           
               }else if(pFound.categoria.equalsIgnoreCase("POLERA CIERRE")){
@@ -283,7 +258,24 @@ public class VISTAStockk extends javax.swing.JPanel {
                   jcb_categoria.setSelectedIndex(5);
               }else if(pFound.categoria.equalsIgnoreCase("SHORTs")){
                   jcb_categoria.setSelectedIndex(6);
-              }                        
+              } 
+                        
+              if(pFound.color.equalsIgnoreCase("ROJO")){
+                  jcb_color.setSelectedIndex(0);           
+              }else if(pFound.color.equalsIgnoreCase("AZUL")){
+                  jcb_color.setSelectedIndex(1);
+              }else if(pFound.color.equalsIgnoreCase("NEGRO")){
+                  jcb_color.setSelectedIndex(2);
+              }else if(pFound.color.equalsIgnoreCase("BLANCO")){
+                  jcb_color.setSelectedIndex(3);
+              }else if(pFound.color.equalsIgnoreCase("ROSA")){
+                  jcb_color.setSelectedIndex(4);
+              }else if(pFound.color.equalsIgnoreCase("VERDE")){
+                  jcb_color.setSelectedIndex(5);
+              }
+              
+              jtf_precio.setText(pFound.precio); 
+              jtf_cantidad.setText(pFound.cantidad);
               
               Habilitar();
               
@@ -316,7 +308,7 @@ public class VISTAStockk extends javax.swing.JPanel {
             nuevo.enlace = lc.enlace;
             lc.enlace = nuevo;
         }
-        lc=nuevo;
+        lc = nuevo;
         return lc;
     }
     
@@ -338,13 +330,12 @@ public class VISTAStockk extends javax.swing.JPanel {
         if(encontrado){
             Nodo p;
             p = actual.enlace;
-            if(lc==lc.enlace){
-                lc=null;
-            }else if(p==lc){
-                lc=actual;//Se borra el elemento referenciado por lc
-
-                //el nuevo acceso a la lista en el anterior
-                actual.enlace = p.enlace;
+            if(lc==lc.enlace) lc=null;
+            else 
+            {   if(p==lc)
+                   lc = actual;//Se borra el elemento referenciado por lc
+                   //el nuevo acceso a la lista en el anterior
+                   actual.enlace = p.enlace;
             }
         }
         VerDatos();
@@ -357,7 +348,7 @@ public class VISTAStockk extends javax.swing.JPanel {
         Nodo p;//puntero 
         
         if(lc!=null){
-            num=0;
+            //num=0;
             p=lc.enlace;
             
             do{
@@ -367,6 +358,7 @@ public class VISTAStockk extends javax.swing.JPanel {
                 categoria = p.categoria;
                 color = p.color;
                 cantidad = p.cantidad;              
+                //num++;
                 
                 Object[] fila={id,nombre,precio,categoria,color,cantidad};
                 miModelo.addRow(fila);
@@ -386,7 +378,6 @@ public class VISTAStockk extends javax.swing.JPanel {
     }
     
     void LimpiarEntradas(){
-        jtf_ID.setText(" ");
         jtf_nombre.setText(" ");
         jtf_precio.setText(" ");
         jcb_categoria.setSelectedIndex(0);
@@ -407,12 +398,33 @@ public class VISTAStockk extends javax.swing.JPanel {
         jbt_guardar.setEnabled(true);
     }
     
-    void GrabarArchivo(Nodo DN) {
+  /*  void GrabarArchivo(Nodo lc) {
         try {
-            FileWriter fw = new FileWriter("src\\STOCK\\Stock.txt", true);
+            FileOutputStream out= new FileOutputStream("Stock.txt");
+            ObjectOutputStream salida = new ObjectOutputStream(out);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR EN LA GRABACION", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }*/
+    
+ /*   void ExtraerdeArchivo() {
+        try {
+            ObjectInputStream leer = new ObjectInputStream(new FileInputStream("Stock.txt"));
+            mostarEntabla(lc) = (mostarEntabla(lc)) leer.readObject();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR EN LA LECTURA");
+        }
+    }*/
+    
+ 
+    void GrabarArchivo(Nodo lc) {
+        try {
+            FileWriter fw = new FileWriter("Stock.txt", true);
             PrintWriter pw = new PrintWriter(fw);
             //"ID","NOMBRE","PRECIO","CATEGORIA","COLOR","CANTIDAD️"
-            pw.println(DN.id+"|"+DN.nombre+"|"+DN.precio+"|"+DN.categoria+"|"+DN.color+"|"+DN.cantidad);
+            pw.println(lc.id+"|"+lc.nombre+"|"+lc.precio+"|"+lc.categoria+"|"+lc.color+"|"+lc.cantidad);
             pw.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR EN LA GRABACION", "ERROR", JOptionPane.INFORMATION_MESSAGE);
@@ -421,7 +433,7 @@ public class VISTAStockk extends javax.swing.JPanel {
 
     void ExtraerdeArchivo() {
         String linea;
-        try (FileReader fr = new FileReader("src\\STOCK\\Stock.txt");
+        try (FileReader fr = new FileReader("Stock.txt");
                 BufferedReader br = new BufferedReader(fr);) {
 
             while ((linea = br.readLine()) != null) {
@@ -432,10 +444,10 @@ public class VISTAStockk extends javax.swing.JPanel {
                 String categoria = st.nextToken();
                 String color = st.nextToken();
                 String cantidad = st.nextToken();
-                DN = new Nodo(id,nombre,precio,categoria,color,cantidad);
-                dn[num] = DN;
-                mostarEntabla(DN);
-                num++;
+                lc = new Nodo(id,nombre,precio,categoria,color,cantidad);
+                //dn[num] = DN;
+                mostarEntabla(lc);
+                //num++;
                 
             }
         } catch (Exception e) {
