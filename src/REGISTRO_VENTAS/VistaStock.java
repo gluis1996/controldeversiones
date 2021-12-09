@@ -58,6 +58,7 @@ DefaultTableModel model=new DefaultTableModel ();
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("LISTA DE PRODUCTOS");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

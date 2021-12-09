@@ -37,7 +37,10 @@ public class VISTAStockk extends javax.swing.JPanel {
         ExtraerdeArchivo();
     }
 
- 
+    void mostarEntabla(Nodo nd){
+    Object Fila [] = {nd.id,nd.nombre,nd.precio,nd.categoria,nd.color,nd.cantidad};
+    miModelo.addRow(Fila);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -134,7 +137,7 @@ public class VISTAStockk extends javax.swing.JPanel {
                 jbt_guardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbt_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 110, 40));
+        jPanel1.add(jbt_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 110, 40));
 
         jbt_eliminar.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jbt_eliminar.setText("ELIMINAR");
@@ -144,7 +147,7 @@ public class VISTAStockk extends javax.swing.JPanel {
                 jbt_eliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbt_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 110, 40));
+        jPanel1.add(jbt_eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 110, 40));
 
         jbt_modificar.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jbt_modificar.setText("MODIFICAR");
@@ -154,7 +157,7 @@ public class VISTAStockk extends javax.swing.JPanel {
                 jbt_modificarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 110, 40));
+        jPanel1.add(jbt_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 110, 40));
 
         jLabel9.setFont(new java.awt.Font("Dubai", 1, 48)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 51));
@@ -175,7 +178,7 @@ public class VISTAStockk extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTablestock);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 800, 320));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 780, 320));
 
         jLabel10.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jLabel10.setText(" Color:");
@@ -190,9 +193,9 @@ public class VISTAStockk extends javax.swing.JPanel {
                 jbt_mostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbt_mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, 110, 40));
+        jPanel1.add(jbt_mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 110, 40));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 820, 515));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 790, 515));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbt_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_guardarActionPerformed
@@ -242,7 +245,7 @@ public class VISTAStockk extends javax.swing.JPanel {
         // TODO add your handling code here:
         String id=jtf_ID.getText();
         if(id.equalsIgnoreCase("")){
-            JOptionPane.showMessageDialog(this, "Ingrese el codigo por favor");
+            JOptionPane.showMessageDialog(null, "Ingrese el codigo por favor");
         }else{
             pFound=Buscar(lc,id);
             
@@ -431,7 +434,9 @@ public class VISTAStockk extends javax.swing.JPanel {
                 String cantidad = st.nextToken();
                 DN = new Nodo(id,nombre,precio,categoria,color,cantidad);
                 dn[num] = DN;
+                mostarEntabla(DN);
                 num++;
+                
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR AL EXTRAER");
