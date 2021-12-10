@@ -17,7 +17,6 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     //REGSITRO DE VENTAS
     String cabecera[] = {"N°", "PRODCUTO", "CANTIDAD", "PRECIO UNIT.", "SUB TOTAL"};
     String data[][] = {};
-    REGITRAS_VENTA_NODO inicio, fin;
     int num;
     File Fichero;
     File FicheroVenta;
@@ -38,15 +37,8 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         Fichero = new File("src\\STOCK\\Stock.txt");
         
     }
-
-    /*INSENTAR AL INICIO LA VENTA
-    REGITRAS_VENTA_NODO insertarAlInicio(REGITRAS_VENTA_NODO inicio, String dni, String nombres, String direccion, String codigoProducto, String producto, String color, String envio, int cantidad, double precio_unit) {
-        REGITRAS_VENTA_NODO nuevo = new REGITRAS_VENTA_NODO(dni, nombres, direccion, codigoProducto, producto, color, envio, cantidad, precio_unit);
-        nuevo.siguiente = inicio;
-        inicio = nuevo;
-        return inicio;
-
-    }*/
+ 
+    
     //MOSTRAR EN LA TABLA
     void mostrarEnTabla(REGITRAS_VENTA_NODO rvn) {
         Object fila[] = {num + 1, rvn.producto, rvn.cantidad, rvn.precio_unit, rvn.sub_total()};
@@ -54,31 +46,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     }
 
 
-    /*void VerDatos() {
-        String dni, nombres, direccion, codigoProducto, producto, color, envios;
-        int cantidad;
-        Double precio_unit;
-        num = 0;
-        REGITRAS_VENTA_NODO aux = inicio;
-        modelo.removeRow(ERROR);
-        while (aux != null) {
-            dni = aux.dni;
-            nombres = aux.nombres;
-            direccion = aux.direccion;
-            codigoProducto = aux.codigoProducto;
-            producto = aux.producto;
-            color = aux.color;
-            envios = aux.envio;
-            cantidad = aux.cantidad;
-            precio_unit = aux.precio_unit;
-            num++;
-            String numera = String.valueOf(num);
-            Object fila[] = {numera, producto, cantidad, precio_unit, aux.sub_total()};
-            modelo.addRow(fila);
-            aux = aux.siguiente;
-        }
 
-    }*/
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -361,7 +329,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         extraer_pro();
 
     }//GEN-LAST:event_BTN_BUSCAR_PRODUCTOActionPerformed
-
+ 
     private void BTN_AGREGAR_COMPRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_AGREGAR_COMPRAActionPerformed
        String nombre = txtcodigoVenta.getText();
         FicheroVenta = new File("src\\FicheroVentas\\"+nombre+".txt");  
@@ -375,8 +343,8 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
        
         Nodo_Historial nh = new Nodo_Historial(codigo_venta, dni, direccion, Envio, FEcha, Ptotal);
         listaHistorial.add(nh);
-        objGuardarHistorial.GuardarVenta(FicheroHistorial, listaHistorial);
-        
+        //objGuardarHistorial.GuardarVenta(FicheroHistorial, listaHistorial);
+               
         String cod = txtcodigoproducto.getText();
         //int cantidad = Integer.parseInt(txtcantidad.getText());
         //registarVentasEnElFichero(cod, cantidad);
@@ -481,20 +449,11 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
             while ((linea = br.readLine()) != null ) {
                 String palabra[] = linea.split(", ");
                 if (palabra[0].equals(txtcodigoproducto.getText())&& bandera == true) {
+                    JOptionPane.showMessageDialog(null, "Producto encontrado");
                     txtDescripcionProduc.setText(palabra[1]);
-                    txtcolorProducto.setText(palabra[5]);
-                    txtprecioUnit.setText(palabra[2]);
-                    
-                }else {
-                    bandera = false;
-                                       
-                }
-                   
-            }
-            if (bandera == false){
-                JOptionPane.showMessageDialog(null, "No Registra");
-            }else {
-                JOptionPane.showMessageDialog(null, "Producto encontrado");
+                    txtcolorProducto.setText(palabra[4]);
+                    txtprecioUnit.setText(palabra[2]);            
+                }                   
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR EN BUSCAR PRODCUTO \n" + e);
@@ -518,7 +477,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
                 int da1;
                 String ax = "";
                 if (f[0].equals(codigo)) {
-                    da1 = Integer.parseInt(f[4]) - cantidad;
+                    da1 = Integer.parseInt(f[5]) - cantidad;
                     f[4] = String.valueOf(da1);
                     ax = f[0] + ", " + f[1] + ", " + f[2] + ", " + f[3] + ", " + f[4] + ", " + f[5];
                     linea = ax;

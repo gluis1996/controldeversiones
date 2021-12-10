@@ -7,7 +7,8 @@ public class Nodo_Historial {
     String Envio;
     String FEcha;
     Double Ptotal;
-    Nodo_Historial siguiente;
+    
+    public Nodo_Historial siguiente;
     
     public Nodo_Historial(String codigo_venta, String dni, String Direccion, String Envio, String FEcha, Double Ptotal) {
         this.codigo_venta = codigo_venta;
@@ -17,6 +18,7 @@ public class Nodo_Historial {
         this.FEcha = FEcha;
         this.Ptotal = Ptotal;
     }
+    
 
     public String getCodigo_venta() {
         return codigo_venta;
@@ -64,14 +66,6 @@ public class Nodo_Historial {
 
     public void setPtotal(Double Ptotal) {
         this.Ptotal = Ptotal;
-    }
-
-    public Nodo_Historial getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(Nodo_Historial siguiente) {
-        this.siguiente = siguiente;
     }
 
     

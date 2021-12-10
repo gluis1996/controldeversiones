@@ -6,7 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import Vendedores.*;
+
 public class VISTA extends javax.swing.JFrame {
+
     Vendedores vd;
     int ejex;
     int ejey;
@@ -190,7 +192,7 @@ public class VISTA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usua = txtusername.getText();
         String pass = txtpassword.getText();
-        Vendedores vdd[]={};
+        Vendedores vdd[] = {};
         DASHBOARD DS = new DASHBOARD();
         DASHBOARD2 DS2 = new DASHBOARD2();
         String linea;
@@ -263,7 +265,7 @@ public class VISTA extends javax.swing.JFrame {
         if (txtusername.getText().equals("Ingrese su nombre de usuario")) {
             txtusername.setText("");
             txtusername.setForeground(Color.black);
-        }else if (String.valueOf(txtpassword.getPassword()).isEmpty()) {
+        } else if (String.valueOf(txtpassword.getPassword()).isEmpty()) {
             txtpassword.setText("********");
             txtpassword.setForeground(Color.gray);
         }
@@ -273,7 +275,7 @@ public class VISTA extends javax.swing.JFrame {
         if (String.valueOf(txtpassword.getPassword()).equals("********")) {
             txtpassword.setText("");
             txtpassword.setForeground(Color.black);
-        }else if (txtusername.getText().equals("Ingrese su nombre de usuario")) {
+        } else if (txtusername.getText().equals("Ingrese su nombre de usuario")) {
             txtusername.setText("");
             txtusername.setForeground(Color.black);
         }
@@ -305,11 +307,12 @@ public class VISTA extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
+
             public void run() {
                 new VISTA().setVisible(true);
             }
-        });
+        }
+        );
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

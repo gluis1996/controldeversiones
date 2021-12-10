@@ -18,8 +18,8 @@ DefaultTableModel model=new DefaultTableModel ();
         model.addColumn("NOMBRE");
         model.addColumn("PRECIO");
         model.addColumn("CATEGORIA");
-        model.addColumn("CANTIDAD");
         model.addColumn("COLOR");
+        model.addColumn("CANTIDAD");
         this.jTable1.setModel(model);
         ListEnArchivo();
     }
@@ -36,7 +36,7 @@ DefaultTableModel model=new DefaultTableModel ();
                 {
                 //System.out.println(cad);
                     String myStr = cad;
-                    List myList = Arrays.asList(myStr.split(","));
+                    List myList = Arrays.asList(myStr.split(", "));
                     model.addRow(myList.toArray());
                 }
                 bf.close();

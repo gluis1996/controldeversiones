@@ -421,7 +421,7 @@ public class VISTAStockk extends javax.swing.JPanel {
             FileWriter fw = new FileWriter("src\\STOCK\\Stock.txt", true);
             PrintWriter pw = new PrintWriter(fw);
             //"ID","NOMBRE","PRECIO","CATEGORIA","COLOR","CANTIDAD️"
-            pw.println(lc.id+"|"+lc.nombre+"|"+lc.precio+"|"+lc.categoria+"|"+lc.color+"|"+lc.cantidad);
+            pw.println(lc.id+", "+lc.nombre+", "+lc.precio+", "+lc.categoria+", "+lc.color+", "+lc.cantidad);
             pw.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR EN LA GRABACION", "ERROR", JOptionPane.INFORMATION_MESSAGE);
@@ -431,10 +431,10 @@ public class VISTAStockk extends javax.swing.JPanel {
     void ExtraerdeArchivo() {
         String linea;
         try (FileReader fr = new FileReader("src\\STOCK\\Stock.txt");
-                BufferedReader br = new BufferedReader(fr);) {
+             BufferedReader br = new BufferedReader(fr);) {
 
             while ((linea = br.readLine()) != null) {
-                StringTokenizer st = new StringTokenizer(linea, "|");
+                StringTokenizer st = new StringTokenizer(linea, ", ");
                 String id = st.nextToken();
                 String nombre = st.nextToken();
                 String precio = st.nextToken();
@@ -444,8 +444,7 @@ public class VISTAStockk extends javax.swing.JPanel {
                 lc = new Nodo(id,nombre,precio,categoria,color,cantidad);
                 //dn[num] = DN;
                 mostarEntabla(lc);
-                //num++;
-                
+                //num++;                
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR AL EXTRAER");
