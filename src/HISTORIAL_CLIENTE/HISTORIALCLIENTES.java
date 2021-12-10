@@ -9,10 +9,13 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 public class HISTORIALCLIENTES extends javax.swing.JPanel {
     DefaultTableModel model;
+    TableRowSorter<DefaultTableModel> sorter;
     int num;
     public HISTORIALCLIENTES() {
         initComponents();
@@ -23,7 +26,11 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         model.addColumn("ENVIO");
         model.addColumn("FECHA");
         model.addColumn("PRECIO TOTAL");
-        this.jTable1.setModel(model);
+        jTable1.setModel(model);
+        jTable1.setAutoCreateRowSorter(true);
+        sorter = new TableRowSorter<>(model);
+        jTable1.setRowSorter(sorter);
+        
         ListEnArchivo();
     }
 
@@ -41,7 +48,7 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        txtbusca = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -83,8 +90,14 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         });
         jPanel2.add(jButton2);
         jButton2.setBounds(260, 50, 130, 30);
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(120, 50, 130, 22);
+
+        txtbusca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtbuscaKeyReleased(evt);
+            }
+        });
+        jPanel2.add(txtbusca);
+        txtbusca.setBounds(120, 50, 130, 22);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(30, 40, 580, 90);
@@ -139,6 +152,18 @@ void ListEnArchivo(){
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void txtbuscaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbuscaKeyReleased
+        filtro();
+        
+        
+    }//GEN-LAST:event_txtbuscaKeyReleased
+private void filtro (){
+    try {
+        sorter.setRowFilter(RowFilter.regexFilter(txtbusca.getText(),1));
+    } catch (Exception e) {
+    }
+
+}
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -151,6 +176,6 @@ void ListEnArchivo(){
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtbusca;
     // End of variables declaration//GEN-END:variables
 }
