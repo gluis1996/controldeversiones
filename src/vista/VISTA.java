@@ -35,8 +35,6 @@ public class VISTA extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         txtpassword = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
-        cbxTusuario = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -161,12 +159,6 @@ public class VISTA extends javax.swing.JFrame {
         jPanel2.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 270, -1));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 270, 10));
 
-        cbxTusuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONAR", "ADMISTRADOR", "VENDEDOR" }));
-        jPanel2.add(cbxTusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 270, -1));
-
-        jLabel1.setText("Tipo Usuario");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 338, 380));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/DASH.png"))); // NOI18N
@@ -194,12 +186,11 @@ public class VISTA extends javax.swing.JFrame {
         String pass = txtpassword.getText();
         NodoV vdd[] = {};
         DASHBOARD DS = new DASHBOARD();
-        DASHBOARD2 DS2 = new DASHBOARD2();
-        String linea;
+                String linea;
         String linea1;
         boolean con = false;
         boolean con1 = false;
-        if (cbxTusuario.getSelectedItem().equals("VENDEDOR")) {
+        
             try (BufferedReader br = new BufferedReader(new FileReader("src\\Vendedores\\Vendedores.txt"));) {
                 while ((linea = br.readLine()) != null) {
                     String palabra[] = linea.split(", ");
@@ -216,24 +207,7 @@ public class VISTA extends javax.swing.JFrame {
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, "error en la bd");
             }
-        } else if (cbxTusuario.getSelectedItem().equals("ADMISTRADOR")) {
-            try (BufferedReader br = new BufferedReader(new FileReader("src\\vista\\ADMINISTRADOR.txt"));) {
-                while ((linea1 = br.readLine()) != null) {
-                    String palabra[] = linea1.split(" ");
-                    if (palabra[0].equals(usua) && palabra[1].equals(pass)) {
-                        JOptionPane.showMessageDialog(null, "BIENBENIDO");
-                        con1 = true;
-                        dispose();
-                        DS2.setVisible(true);
-                    }
-                }
-                if (!con1) {
-                    JOptionPane.showMessageDialog(null, "verifique el nombre del usuario o contraseña");
-                }
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "error en la bd");
-            }
-        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void BARRA_SUPERIORMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BARRA_SUPERIORMousePressed
@@ -289,7 +263,7 @@ public class VISTA extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -318,9 +292,7 @@ public class VISTA extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BARRA_SUPERIOR;
     private javax.swing.JPanel CERRAR;
-    private javax.swing.JComboBox<String> cbxTusuario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

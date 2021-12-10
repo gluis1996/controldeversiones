@@ -2,6 +2,7 @@ package Vendedores;
 
 import javax.swing.JOptionPane;
 import java.io.*;
+import java.util.StringTokenizer;
 
 public class Lista_Vendedores extends javax.swing.JPanel {
 
@@ -13,8 +14,9 @@ public class Lista_Vendedores extends javax.swing.JPanel {
     public Lista_Vendedores() {
         initComponents();
         arreglo = new NodoV[200];
+        num = 0;
         encabezado();
-        //ExtraerdeArchivo();
+        ExtraerdeArchivo();
     }
 
     NodoV insertaAlInicio(NodoV inicio, String codigo, String nombre, String fnaci, String dni, String contra, String usuario) {
@@ -157,7 +159,21 @@ public class Lista_Vendedores extends javax.swing.JPanel {
     private void jtxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtCodigoActionPerformed
+    void ExtraerdeArchivo() {
+        String linea;
 
+        try (FileReader fr = new FileReader("src/Vendedores/Vendedores.txt");
+                BufferedReader br = new BufferedReader(fr);) {
+
+            while ((linea = br.readLine()) != null) {
+                num++;
+                jTextArea1.append(num+" "+linea + "\n");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR AL EXTRAER");
+        }
+
+    }
     private void jbtnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGrabarActionPerformed
         String cod = jtxtCodigo.getText();
         String nom = jtxtNombre.getText();

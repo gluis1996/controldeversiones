@@ -4,3 +4,4 @@
 0104, Julio Neyra, 34976182, 28/06/94, juneyra, 4444
 0105, Brus Bejarano, 76194346, 31/10/98, brbejarano, 5555
 0106, Eduardo Monaco, 84627913, 25/12/95, edmonaco, 6666
+0106, Felipino Ro, 751000000, 751000000, 7777, Rfelipino
