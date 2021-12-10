@@ -31,7 +31,6 @@ private void paneles(JPanel p) {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         trabajadores = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         contenedor = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -54,7 +53,7 @@ private void paneles(JPanel p) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 110, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 110, -1));
 
         trabajadores.setText("NUEVO COLABORADOR");
         trabajadores.addActionListener(new java.awt.event.ActionListener() {
@@ -62,10 +61,7 @@ private void paneles(JPanel p) {
                 trabajadoresActionPerformed(evt);
             }
         });
-        jPanel1.add(trabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, -1));
-
-        jButton2.setText("REPORTE");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 110, -1));
+        jPanel1.add(trabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 110, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 530));
 
@@ -139,7 +135,6 @@ private void paneles(JPanel p) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contenedor;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

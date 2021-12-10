@@ -9,7 +9,7 @@ import Vendedores.*;
 
 public class VISTA extends javax.swing.JFrame {
 
-    Vendedores vd;
+    NodoV vd;
     int ejex;
     int ejey;
 
@@ -192,7 +192,7 @@ public class VISTA extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String usua = txtusername.getText();
         String pass = txtpassword.getText();
-        Vendedores vdd[] = {};
+        NodoV vdd[] = {};
         DASHBOARD DS = new DASHBOARD();
         DASHBOARD2 DS2 = new DASHBOARD2();
         String linea;

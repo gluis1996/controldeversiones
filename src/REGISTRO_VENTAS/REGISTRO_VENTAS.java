@@ -2,11 +2,12 @@ package REGISTRO_VENTAS;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import HISTORIAL_CLIENTE.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class REGISTRO_VENTAS extends javax.swing.JPanel {
 
@@ -26,7 +27,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     //ARRAY LIST
     ArrayList<REGITRAS_VENTA_NODO> listaVenta = new ArrayList<>();
     ArrayList<Nodo_Historial>listaHistorial = new ArrayList<>();
-    
+    Nodo_Historial nh;
 
     public REGISTRO_VENTAS() {
         initComponents();
@@ -35,9 +36,25 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         modelo = new DefaultTableModel(data, cabecera);
         tabla.setModel(modelo);
         Fichero = new File("src\\STOCK\\Stock.txt");
+        txtFecha.setText(fechaActual()+" -- "+horaActual());
+        
         
     }
- 
+    
+    public static String horaActual (){
+            Date sisHora = new Date();
+            String pmAm = "hh:mm:ss a";
+            SimpleDateFormat format = new SimpleDateFormat(pmAm);
+            return  format.format(sisHora);
+            
+    }
+    
+    public static String fechaActual(){
+        Date fecha = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/YYYY");
+        return formato.format(fecha);
+        
+    }
     
     //MOSTRAR EN LA TABLA
     void mostrarEnTabla(REGITRAS_VENTA_NODO rvn) {
@@ -89,6 +106,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         txtFecha = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(780, 510));
 
@@ -279,13 +297,21 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
             }
         });
         jPanel3.add(jButton1);
-        jButton1.setBounds(470, 110, 30, 30);
+        jButton1.setBounds(360, 60, 30, 30);
         jPanel3.add(txtFecha);
-        txtFecha.setBounds(320, 240, 110, 22);
+        txtFecha.setBounds(320, 240, 180, 22);
 
         jLabel14.setText("CANTIDAD");
         jPanel3.add(jLabel14);
         jLabel14.setBounds(190, 220, 60, 16);
+
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton2);
+        jButton2.setBounds(470, 110, 30, 30);
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 510));
 
@@ -303,16 +329,6 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
 
     private void BTN_BUSCAR_CLIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BUSCAR_CLIENTEActionPerformed
         extraerdtos();
-        String nombre = "", direccion = "", dni = "";
-        for (int i = 0; i < num; i++) {
-            if (arregloclientes[i].dni.equalsIgnoreCase(txtdni.getText())) {
-                dni = arregloclientes[i].dni;
-                nombre = arregloclientes[i].nombres;
-                direccion = arregloclientes[i].direccion;
-            }
-        }
-        txtnombres.setText(nombre);
-        txtdireccion.setText(direccion);
     }//GEN-LAST:event_BTN_BUSCAR_CLIENTEActionPerformed
 
     private void BTN_REGISTRARCLIENTEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_REGISTRARCLIENTEActionPerformed
@@ -331,7 +347,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     }//GEN-LAST:event_BTN_BUSCAR_PRODUCTOActionPerformed
  
     private void BTN_AGREGAR_COMPRAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_AGREGAR_COMPRAActionPerformed
-       String nombre = txtcodigoVenta.getText();
+        String nombre = txtcodigoVenta.getText();
         FicheroVenta = new File("src\\FicheroVentas\\"+nombre+".txt");  
         FicheroHistorial = new File ("src\\HISTORIAL_CLIENTE\\HISORIALVENTA.txt");
         String codigo_venta = txtcodigoVenta.getText();
@@ -343,14 +359,14 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
        
         Nodo_Historial nh = new Nodo_Historial(codigo_venta, dni, direccion, Envio, FEcha, Ptotal);
         listaHistorial.add(nh);
-        //objGuardarHistorial.GuardarVenta(FicheroHistorial, listaHistorial);
-               
-        String cod = txtcodigoproducto.getText();
-        //int cantidad = Integer.parseInt(txtcantidad.getText());
-        //registarVentasEnElFichero(cod, cantidad);
+        objGuardarHistorial.GuardarVenta(FicheroHistorial, listaHistorial);
+        
         objetosGuardarVentas.EscribirVenta(FicheroVenta,listaVenta);
         JOptionPane.showMessageDialog(null, "Venta Registrada Exitosamente");
+        modelo.getDataVector().removeAllElements();
+        tabla.updateUI();
         limpiar_todo();
+        
 
     }//GEN-LAST:event_BTN_AGREGAR_COMPRAActionPerformed
 
@@ -404,15 +420,20 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       VistaStock vs = new VistaStock();
-       vs.setVisible(true);
+       vistaClientes vc = new vistaClientes();
+       vc.setVisible(true);
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        VistaStock vs = new VistaStock();
+       vs.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
     void grabararchivo(clientes cl) {
         try {
             FileWriter fw = new FileWriter("src\\REGISTRO_VENTAS\\registro_cliente.txt", true);
             PrintWriter pw = new PrintWriter(fw);
-            pw.println(cl.dni + "|" + cl.nombres + "|" + cl.direccion);
+            pw.println(cl.dni + ", " + cl.nombres + ", " + cl.direccion);
             pw.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error en la grabacion", "ERROR", JOptionPane.INFORMATION_MESSAGE);
@@ -421,17 +442,17 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
 
     void extraerdtos() {
         String linea;
+        Boolean bandera = true;
         try (FileReader fr = new FileReader("src\\REGISTRO_VENTAS\\registro_cliente.txt");
                 BufferedReader br = new BufferedReader(fr);) {
 
             while ((linea = br.readLine()) != null) {
-                StringTokenizer st = new StringTokenizer(linea, "|");
-                String dni = st.nextToken();
-                String nombre = st.nextToken();
-                String direccion = st.nextToken();
-                cl = new clientes(dni, nombre, direccion);
-                arregloclientes[num] = cl;
-                num++;
+                String palabra[] = linea.split(", ");
+                if (palabra[0].equals(txtdni.getText())&& bandera == true) {
+                    JOptionPane.showMessageDialog(null, "Cliente encontrado");
+                    txtnombres.setText(palabra[1]);
+                    txtdireccion.setText(palabra[2]);          
+                }
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "error en extraer");
@@ -478,7 +499,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
                 String ax = "";
                 if (f[0].equals(codigo)) {
                     da1 = Integer.parseInt(f[5]) - cantidad;
-                    f[4] = String.valueOf(da1);
+                    f[5] = String.valueOf(da1);
                     ax = f[0] + ", " + f[1] + ", " + f[2] + ", " + f[3] + ", " + f[4] + ", " + f[5];
                     linea = ax;
                     System.out.println("Valor modificado " + ax);
@@ -521,6 +542,7 @@ public class REGISTRO_VENTAS extends javax.swing.JPanel {
     private javax.swing.JButton BTN_REGISTRARCLIENTE;
     private javax.swing.JComboBox<String> cbxenvios;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

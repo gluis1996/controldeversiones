@@ -4,6 +4,8 @@ package vista;
 import HISTORIAL_CLIENTE.HISTORIALCLIENTES;
 import DETALLE_VENTAS.Detalle_Ventass;
 import REGISTRO_VENTAS.REGISTRO_VENTAS;
+import STOCK.VISTAStockk;
+import Vendedores.Lista_Vendedores;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -32,6 +34,8 @@ public class DASHBOARD extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -77,6 +81,28 @@ public class DASHBOARD extends javax.swing.JFrame {
             }
         });
         BARRA_LATERAL.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 130, 30));
+
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
+        jButton5.setText("STOCK");
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        BARRA_LATERAL.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 130, 30));
+
+        jButton6.setBackground(new java.awt.Color(255, 255, 255));
+        jButton6.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 10)); // NOI18N
+        jButton6.setText("COLABORADORES");
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        BARRA_LATERAL.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, 30));
 
         BASE.add(BARRA_LATERAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 530));
 
@@ -128,6 +154,16 @@ public class DASHBOARD extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        VISTAStockk vs = new VISTAStockk();
+        paneles(vs);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       Lista_Vendedores lv = new Lista_Vendedores();
+        paneles(lv);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,6 +206,8 @@ public class DASHBOARD extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

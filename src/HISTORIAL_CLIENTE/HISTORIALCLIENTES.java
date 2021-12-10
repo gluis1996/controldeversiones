@@ -4,23 +4,31 @@
  * and open the template in the editor.
  */
 package HISTORIAL_CLIENTE;
-public class HISTORIALCLIENTES extends javax.swing.JPanel {
 
+import java.io.*;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+public class HISTORIALCLIENTES extends javax.swing.JPanel {
+    DefaultTableModel model;
     int num;
     public HISTORIALCLIENTES() {
         initComponents();
-        encabezado();
-        
-        num =0;
+        model= new DefaultTableModel ();
+        model.addColumn("CODIGO");
+        model.addColumn("DNI");
+        model.addColumn("DIRECCION");
+        model.addColumn("ENVIO");
+        model.addColumn("FECHA");
+        model.addColumn("PRECIO TOTAL");
+        this.jTable1.setModel(model);
+        ListEnArchivo();
     }
 
    public void encabezado() {
-        textareaventas.setText("");
-        //Insertar encabezado al textarea
-        textareaventas.append("");
-        textareaventas.append("N°     CODIGO        DNI        DIRECCION        ENVIO    FECHA     PAGO TOTAL " + "\n");
-        textareaventas.append("----------------------------------------------------------------------------------------------\n");
-
+        
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -34,8 +42,8 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        textareaventas = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jLabel3.setText("jLabel3");
 
@@ -81,17 +89,52 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(30, 40, 580, 90);
 
-        textareaventas.setColumns(20);
-        textareaventas.setRows(5);
-        jScrollPane2.setViewportView(textareaventas);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 140, 670, 330);
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 140, 760, 350);
 
         add(jPanel1);
         jPanel1.setBounds(10, 10, 780, 510);
     }// </editor-fold>//GEN-END:initComponents
+void ListEnArchivo(){
+        try{
+            File f = new File ("src\\HISTORIAL_CLIENTE\\HISORIALVENTA.txt");
+            
+            if(f.exists())
+            {
+                FileReader fr = new FileReader(f);
+                BufferedReader bf = new BufferedReader(fr);
+                String cad;
+                while ((cad = bf.readLine()) != null)
+                {
+                //System.out.println(cad);
+                    String myStr = cad;
+                    List myList = Arrays.asList(myStr.split(", "));
+                    model.addRow(myList.toArray());
+                }
+                bf.close();
+            }
+            else
+            {
+            System.out.println("El archivo no existe");
+            }
 
+          } catch (Exception ex){
+              JOptionPane.showMessageDialog(null,"Error en la lista...."+ex);
+        } 
+  }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -106,8 +149,8 @@ public class HISTORIALCLIENTES extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField3;
-    public static javax.swing.JTextArea textareaventas;
     // End of variables declaration//GEN-END:variables
 }

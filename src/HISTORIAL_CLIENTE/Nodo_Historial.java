@@ -8,8 +8,6 @@ public class Nodo_Historial {
     String FEcha;
     Double Ptotal;
     
-    public Nodo_Historial siguiente;
-    
     public Nodo_Historial(String codigo_venta, String dni, String Direccion, String Envio, String FEcha, Double Ptotal) {
         this.codigo_venta = codigo_venta;
         this.dni = dni;

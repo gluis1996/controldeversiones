@@ -1,0 +1,5 @@
+0005, 48596665, Jirón Monte Algarrobo Monterrico Sur, PUNO, 10/12/2021 -- 03:12:23 p. m., 1260.0
+0006, 56568452, Calle Juan Voto Bernales Santa Catalina, PUNO, 10/12/2021 -- 03:12:23 p. m., 3090.0
+0007, 75268741, Calle General Federico Recavarren San Roque Santiago de Surco, PUNO, 10/12/2021 -- 03:17:07 p. m., 250.0
+0008, 55231485, Jiron Francisco Rivas 1111 La Victoria, PUNO, 10/12/2021 -- 03:31:38 p. m., 550.0
+0009, 56568452, Calle Juan Voto Bernales Santa Catalina, PUNO, 10/12/2021 -- 03:38:35 p. m., 1000.0
